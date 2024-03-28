@@ -16,13 +16,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-
     background-color: white;
     box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);
     z-index: 100;
 }
-
-
 
 #nav-computer a {
     text-decoration: none;
@@ -78,7 +75,7 @@ header {
     background-color: #FF8DE9;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     #nav-computer {
         display: none;
     }
@@ -91,6 +88,52 @@ header {
     }
     #input-container {
         width: 250px
+    }
+    #about {
+        gap: 5%;
+        flex-direction: column;
+        height: 70vh;
+    }
+    #about-img {
+        width: 100%;
+        margin-top: 20px;
+    }
+    #about-text h3 {
+        font-size: 17px;
+    }
+    #about-text a, p {
+        font-size: 14px;
+    }
+} 
+
+@media (min-width: 800px) and (max-width: 900px) {
+    #nav-computer {
+        display: none;
+    }
+    #home {
+        flex-direction: column;
+        gap: 20px;
+    }
+    #home-title{
+        font-size: 25px;
+    }
+    #input-container {
+        width: 250px
+    }
+    #about {
+        gap: 5%;
+        flex-direction: column;
+        height: 80vh;
+    }
+    #about-img {
+        width: 100%;
+        margin-top: 35px;
+    }
+    #about-text h3 {
+        font-size: 18px;
+    }
+    #about-text a, p {
+        font-size: 14px;
     }
 }
 
@@ -108,8 +151,12 @@ header {
     #input-container {
         width: 280px
     }
+    #about {
+        gap: 5%;
+        height: 70vh;
+    }
     #about-img {
-        width: 35%;
+        width: 50%;
     }
 }
 
