@@ -1,0 +1,20 @@
+:root {
+    --default-font-family: font-family: "Poppins", sans-serif; 
+    --light-pink: #FF8DE9;
+    --strong-pink: #E04171;
+    --light-grey: #adadad;
+    --strong-grey: #7C7879;
+    --max-font-size: 90px;
+    --h1-font-size: 60px;
+    --h3-font-size: 18px;
+    --p-font-size: 14px;
+}
+
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: var(--default-font-family);
+	vertical-align: baseline;
+    box-sizing: border-box;
+}

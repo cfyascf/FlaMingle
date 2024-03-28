@@ -1,1 +1,0 @@
-https://github.com/gerencianet/gn-api-sdk-node/tree/master
