@@ -108,5 +108,8 @@ header {
     #input-container {
         width: 280px
     }
+    #about-img {
+        width: 35%;
+    }
 }
 
