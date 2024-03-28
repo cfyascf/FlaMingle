@@ -31,3 +31,21 @@ header {
 #nav-mobile a:hover {
     color: var(--light-grey);
 }
+
+@media (max-width: 800px) {
+    #nav-computer {
+        display: none;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+    #nav-computer {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    #nav-mobile {
+        display: none;
+    }
+}
