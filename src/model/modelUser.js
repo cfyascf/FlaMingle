@@ -9,6 +9,11 @@ const user = database.define('User', {
         primaryKey: true
     },
 
+    CPF: {
+        type: sequelize.STRING(11),
+        allowNull: false
+    },
+
     Name: {
         type: sequelize.STRING(36),
         allowNull: false,       
@@ -19,10 +24,16 @@ const user = database.define('User', {
         allowNull: false,
     },
 
-    CPF: {
-        type: sequelize.STRING(11),
+    Email: {
+        type: sequelize.STRING(36),
         allowNull: false
     },
+
+    Phone: {
+        type: sequelize.STRING(14),
+        allowNull: false
+    },
+
 
     Password: {
         type: sequelize.STRING(36),

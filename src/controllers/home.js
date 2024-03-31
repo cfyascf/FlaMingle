@@ -1,5 +1,5 @@
 module.exports = {
         async homeGet(req, res) {
-            res.render('view home');
+            res.render('home');
         }
 }

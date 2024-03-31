@@ -2,17 +2,19 @@ const user = require('../model/userModel');
 
 module.exports = {
     async userGet(req, res) {
-        res.render('view login');
+        res.render('register');
     },
 
-    async userInsert(req, res) {
+    async userPost(req, res) {
         
         const data = req.body;
 
         await user.create ({
+            CPF: data.cpf,
             Name: data.name,
             Birth: data.birth,
-            CPF: data.cpf,
+            Email: data.email,
+            Phone: data.phone,
             Password: data.password
         });
 

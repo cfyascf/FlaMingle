@@ -12,15 +12,35 @@ main {
 }
 
 .left-side {
+    position: relative;
     background-color: #f0f0f0;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 60px 60px 0px 60px;
+}
+
+.left-side h2 {
+    width: 60%;
+    justify-self: center;
+    margin-top: 70px;
+}
+
+.left-side h2 span {
+    color: var(--light-pink);
+}
+
+.left-side img {
+    z-index: 1;
+    align-self: flex-end;
+    width: 700px;
 }
 
 .right-side {
-    padding: 80px;
+    background-color: white;
+    padding: 80px 80px 40px 80px;
+    z-index: 99;
 }
 
 form {
@@ -54,8 +74,23 @@ input:focus + .label, input:valid + .label {
 }
 
 .checkbox {
+    height: fit-content;
+}
+
+.checkbox label a {
+    color: var(--light-pink);
+}
+
+.checkbox input {
+    margin: 0;
+}
+
+.agreements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #register-submitbtn {
@@ -69,4 +104,15 @@ input:focus + .label, input:valid + .label {
 
 #register-submitbtn:hover {
     background-color: var(--light-pink);
+}
+
+@media (max-width: 800px) {
+    .left-side {
+        display: none;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 50px;
+    }
 }

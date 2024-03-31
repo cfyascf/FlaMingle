@@ -9,7 +9,7 @@ const home = require('./controllers/home');
 // Iniciando as rotas
 route.get('/', home.homeGet);
 
-route.get('/view login', register.userGet);
-route.post('/view login', register.userInsert);
+route.get('/registeruser', register.userGet);
+route.post('/registeruser', register.userPost);
 
 module.exports = route;

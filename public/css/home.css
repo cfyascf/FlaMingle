@@ -25,6 +25,10 @@
     background-color: var(--light-pink);
 }
 
+.card-body {
+    padding: 30px;
+}
+
 @media (max-width: 800px) {
     #home {
         flex-direction: column;
