@@ -1,8 +1,8 @@
 const sequelize = require('sequelize');
 
-const database = new sequelize('flamingle', 'flamingleadm', 'mavizokayaszoka',
+const database = new sequelize('flamingle', 'flamingleadm', 'yaszokamavizoka',
 {
-    dialect: 'mssql', host:'localhost', port: 50753
+    dialect: 'mssql', host:'localhost', port: 59255
 });
 
 database.sync();

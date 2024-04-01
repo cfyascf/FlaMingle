@@ -1,4 +1,4 @@
-const user = require('../model/userModel');
+const user = require('../model/modelUser');
 
 module.exports = {
     async userGet(req, res) {
@@ -18,6 +18,6 @@ module.exports = {
             Password: data.password
         });
 
-        res.redirect('view pos login')
+        res.redirect('/')
     }
 }

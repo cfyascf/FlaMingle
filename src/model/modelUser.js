@@ -10,7 +10,7 @@ const user = database.define('User', {
     },
 
     CPF: {
-        type: sequelize.STRING(11),
+        type: sequelize.STRING(14),
         allowNull: false
     },
 
@@ -20,7 +20,7 @@ const user = database.define('User', {
     },
 
     Birth: {
-        type: sequelize.DATE,
+        type: sequelize.STRING(10),
         allowNull: false,
     },
 

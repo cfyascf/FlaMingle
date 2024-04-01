@@ -3,8 +3,8 @@ const express = require('express');
 const route = express.Router();
 
 // Importando os Controllers
-const register = require('./controllers/register');
-const home = require('./controllers/home');
+const register = require('./src/controllers/register');
+const home = require('./src/controllers/home');
 
 // Iniciando as rotas
 route.get('/', home.homeGet);
