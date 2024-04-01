@@ -12,7 +12,11 @@
 }
 
 #home-content {
-    color: #ff4b84;
+    color: var(--light-pink);
+}
+
+.card-body {
+    padding: 35px;
 }
 
 #social-media {
@@ -102,7 +106,7 @@
 }
 
 #btn-home:hover {
-    background-color: #ff4b84;
+    background-color: var(--light-pink);
 }
 
 @media (max-width: 800px) {
