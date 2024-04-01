@@ -1,11 +1,11 @@
 const user = require('../model/modelUser');
 
 module.exports = {
-    async userGet(req, res) {
-        res.render('register');
+    async registerGet(req, res) {
+        res.render('registeruser');
     },
 
-    async userPost(req, res) {
+    async registerPost(req, res) {
         
         const data = req.body;
 
@@ -18,6 +18,6 @@ module.exports = {
             Password: data.password
         });
 
-        res.redirect('/')
+        res.redirect('/');
     }
 }
