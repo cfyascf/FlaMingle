@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="../script/smoothNav.js" defer></script>
     <title>Flamingle</title>
 </head>
 <body style="color: #0E2431;">
@@ -21,17 +24,17 @@
               <a class="navbar-brand" href="#">
                 <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
               </a>
-                <a href="" style="margin-right: 25px;">Página Inicial</a>
+                <a href="" class="x active" onclick="toggleActive(event)" style="margin-right: 25px;">Página Inicial</a>
                 <li class="nav-item dropdown" style="list-style-type: none;">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 20px;">
                         O FlaMingle
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Sobre nós</a></li>
-                        <li><a class="dropdown-item" href="#">Funcionalidades</a></li>
+                        <li><a class="dropdown-item x" onclick="toggleActive(event)"  href="#">Sobre nós</a></li>
+                        <li><a class="dropdown-item x" onclick="toggleActive(event)" href="#">Funcionalidades</a></li>
                     </ul>
                 </li>
-                <a href="" style="margin-right: 10px;">Contato</a>
+                <a href="" class="x" onclick="toggleActive(event)" style="margin-right: 10px;">Contato</a>
             </div>
           </nav>
           <nav id="nav-mobile" class="navbar bg-body-tertiary fixed-top position-fixed" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
@@ -84,7 +87,7 @@
           </nav>
     </header>
     <main>
-      <section id="home" class="d-flex justify-content-center align-items-center" style="height: 100vh; padding: 0 10%;">
+      <section id="home" class="home d-flex justify-content-center align-items-center" style="height: 100vh; padding: 0 10%;">
         <div id="home-img" class="position-absolute"></div>
           <div id="home-content" class="d-flex flex-column align-items-start justify-content-center">
             <h1 id="home-title" style="font-weight: 700;">Dê um Mingle!</h1>
@@ -97,16 +100,17 @@
           </div>
         </div>
       </section>
-      <section id="cards">
+      <section class="cards">
         <div class="card-container">
           <div class="content">
             <div class="card-self">
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Câmbio</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>
+                  Oferecemos +160 moedas atualizadas em tempo real. Com essa vasta gama de moedas disponíveis, nossos usuários podem facilmente realizar conversões entre qualquer par de moedas desejado.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -114,9 +118,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Carteira Inteligente</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Nós integramos os cartões do usuário em um aplicativo único, simplificando pagamentos, oferecendo conveniência e segurança, garantindo uma experiência de transação eficiente, integrada e acessível em um só lugar.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -124,9 +128,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Pix</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Nossa geração de QR Code para PIX simplifica transações financeiras, permitindo pagamentos instantâneos. Essa tecnologia agiliza processos, promovendo conveniência e eficiência em transações digitais, fortalecendo sua economia.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -134,9 +138,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Calendário Financeiro</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Permitimos que nossos usuários programem pagamentos e recebam lembretes para despesas futuras. Promovendo organização, garantindo que compromissos financeiros sejam cumpridos pontualmente, evitando atrasos e penalidades.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -145,15 +149,15 @@
           <div class="swiper-buttd-flex flex-column justify-content-center align-items-centeron-prev"></div>
         </div>
       </section>
-      <section id="about" class="d-flex justify-content-center align-items-center" style="background-color: var(--light-pink); padding: 0 10%;">
+      <section id="about" class="about d-flex justify-content-center align-items-center" style="background-color: var(--light-pink); padding: 0 10%;">
         <img id="about-img" src="../img/about.jpg" alt="">
-        <div id="about-text" class="d-flex flex-column align-items-start justify-content-center" style="color: black;">
-          <h3>Tudo o que você precisa.</h3>
-          <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta sed repellendus, id consequatur necessitatibus omnis eligendi odio, odit laudantium, rem excepturi hic fugiat? Laborum quod aut asperiores placeat officia!</p>
-          <a href="" style="text-decoration: none; color: black">Saiba mais 🡢</a>
+        <div id="about-text" class="d-flex flex-column align-items-start justify-content-center" style="color: #0E2431;">
+          <h2 style="font-weight:700;">Tudo o que você precisa.</h2>
+          <p style="text-align: justify;">A razão de ser do FlaMingle é oferecer a seus clientes uma experiência de conforto e flexibilidade no domínio de seus recursos financeiros. Nós colocamos você no centro, priorizando as suas necessidades na organização transparente da vida financeira e te dando as oportunidades de aprendizado e educação que fazem a diferença pro seu futuro. #ComFlaÉFácil. </p>
+          <a href="" style="text-decoration: none; color: #0E2431">Saiba mais 🡢</a>
         </div>
       </section>
-      <section id="contact" class="" style="padding: 0 10%;">
+      <section id="contact" class="contact" style="padding: 0 10%;">
         <h1 style="font-weight: 700;">Quer entrar em <span style="color: var(--light-pink);">contato?</span></h1>
         <p>Gostaríamos muito de ouvir você. Clique para nos contatar:</p>
         <div id="social-media" style="width: 100%; height: 100%">
@@ -177,6 +181,17 @@
           </a>
         </div>
       </section>
-    </main>     
+    </main>
+    <footer>
+      <p class="footer-title">Flamingle</p>
+      <div class="footer-social">
+          <a href="https://github.com/mavigpimenta/" class="footer-icon"><box-icon name='github' type='logo' ></box-icon></a>
+          <a href="https://br.linkedin.com/in/mariagpimenta" class="footer-icon"><box-icon type='logo' name='linkedin'></box-icon></a>
+          <a href="https://github.com/mavigpimenta/" class="footer-icon"><box-icon name='github' type='logo' ></box-icon></a>
+          <a href="https://br.linkedin.com/in/mariagpimenta" class="footer-icon"><box-icon type='logo' name='linkedin'></box-icon></a>
+      </div>
+      <p class="footer-copyright">&#169; Maria Vitória Garcia Pimenta & Yasmim da Cunha Freitas. All rigths reserved</p>
+  </footer>
+  </footer>     
 </body>
 </html>

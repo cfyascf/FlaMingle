@@ -1,0 +1,40 @@
+footer {
+    box-shadow: -5px 1px 4px rgba(146, 161, 176, 0.4);
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+textarea {
+    resize: none;
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+    font-weight: 700;
+}
+
+.footer-title:hover {
+    color: #FF66C4;
+}
+
+.footer-social {
+    margin-bottom: 1rem;
+}
+
+.footer-icon {
+    font-size: 1.5rem;
+    color: #0E2431;
+    margin: 0 1rem;
+    transition: 0.3s ease;
+}
+
+.footer-icon::after {
+    color:  #FF66C4;
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+}

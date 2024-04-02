@@ -9,7 +9,7 @@ form :where(input, select, button) {
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 10px;
+    border-radius: 109px;
 }
 
 form input {
@@ -40,7 +40,7 @@ form .drop-list {
     display: flex;
     width: 115px;
     height: 45px;
-    border-radius: 10px;
+    border-radius: 190px;
     align-items: center;
     justify-content: center;
     border: 1px solid #999;
@@ -62,7 +62,7 @@ form .drop-list {
     width: 115px;
     height: 45px;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 109px;
     justify-content: center;
     border: 1px solid #999;
 }
@@ -95,7 +95,7 @@ form button {
     background-color: #E04171;
     cursor: pointer;
     font-size: 17px;
-    border-radius: 5px;
+    border-radius: 190px;
     font-weight: 500;
 }
 
