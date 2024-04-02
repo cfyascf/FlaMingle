@@ -31,7 +31,7 @@ textarea {
     transition: 0.3s ease;
 }
 
-.footer-icon::after {
+.footer-icon:hover {
     color:  #FF66C4;
 }
 
