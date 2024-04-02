@@ -15,12 +15,13 @@
     <link rel="stylesheet" href="../css/footer.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="../script/smoothNav.js" defer></script>
+    <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <title>Flamingle</title>
 </head>
 <body style="color: #0E2431;">
     <header style="z-index: 999;">
-        <nav id="nav-computer" class="navbar bg-body-tertiar" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
-            <div class="container-fluid d-flex align-items-center justify-content-start">
+        <nav id="nav-computer" class="navbar bg-body-tertiar d-flex justify-content-between" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
+            <div class="container-fluid d-flex align-items-center justify-content-start" style="width: 90%;">
               <a class="navbar-brand" href="#">
                 <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
               </a>
@@ -35,6 +36,9 @@
                     </ul>
                 </li>
                 <a href="" class="x" onclick="toggleActive(event)" style="margin-right: 10px;">Contato</a>
+            </div>
+            <div class="d-flex align-items-center justify-content-start gap-1" style="width: 10%;">
+              <a href="">Login </a><box-icon name='log-in'></box-icon>
             </div>
           </nav>
           <nav id="nav-mobile" class="navbar bg-body-tertiary fixed-top position-fixed" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
