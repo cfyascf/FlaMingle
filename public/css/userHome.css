@@ -19,14 +19,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 800px;
+    width: 1024px;
     z-index: 2;
     padding: 2rem;
     background: #fff;
     border-radius: 2rem;
-    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
-
 
 .profile-page .content-cover {
     background: var(--strong-pink);
@@ -150,14 +148,4 @@ body {
     filter:  drop-shadow(0 5px 10px rgba(0, 0, 0, .2));
 }
 
-@media (min-width: 320px) and (max-width: 375px) {
-    .profile-page .content {
-        width: 80%;
-    }
-}
 
-@media (min-width: 375px) and (max-width: 425px) {
-    .profile-page .content {
-        width: 80%;
-    }
-}

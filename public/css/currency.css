@@ -3,14 +3,13 @@
     padding: 30px; 
     border-radius: 8px; 
     background-color: white; 
-    box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.4);
 }
 
 form :where(input, select, button) {
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 form input {
@@ -41,7 +40,7 @@ form .drop-list {
     display: flex;
     width: 115px;
     height: 45px;
-    border-radius: 5px;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
     border: 1px solid #999;
@@ -63,7 +62,7 @@ form .drop-list {
     width: 115px;
     height: 45px;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     justify-content: center;
     border: 1px solid #999;
 }
@@ -129,9 +128,6 @@ form button {
 }
 
 @media (max-width: 500px) {
-    #wrapper {
-        width: 280px;
-    }
     .drop-list {
         flex-direction: column;
     }

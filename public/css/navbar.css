@@ -11,8 +11,8 @@ header {
 
 #nav-computer a {
     text-decoration: none;
-    color: black;
     font-weight: 600;
+    color: #0E2431;
     transition: color 0.3s ease;
 }
 
@@ -22,7 +22,6 @@ header {
 
 #nav-mobile a {
     text-decoration: none;
-    color: black;
     font-weight: 500;
     transition: color 0.3s ease;
 }

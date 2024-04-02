@@ -63,7 +63,7 @@ function getExchangeRate() {
 
     exchangeRateTxt.innerText = "Convertendo...";
 
-    let url = ` https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency.value}`;
+    let url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency.value}`;
     fetch(url).then(response => response.json()).then(result => {
         let exchangeRate = result.conversion_rates[toCurrency.value]
         let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
