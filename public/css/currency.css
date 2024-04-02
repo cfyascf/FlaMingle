@@ -132,3 +132,9 @@ form button {
         flex-direction: column;
     }
 } 
+
+@media (max-width: 330px) {
+    .drop-list {
+        flex-direction: column;
+    }
+} 
