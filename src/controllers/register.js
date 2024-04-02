@@ -13,7 +13,6 @@ module.exports = {
         const cpf = data.cpf;
         const query = 'SELECT * FROM Users WHERE CPF = :cpf';
         const parameters = { cpf: cpf }; 
-        let found = false;
 
         const result = await db.query(query, {
             replacements: parameters,
@@ -21,9 +20,7 @@ module.exports = {
         })
 
         if(result.length > 0) {
-            found = true;
-            console.log("user existe vei");
-            res.redirect('/');
+            res.redirect('/registeruser');
         }    
         else {
             await user.create ({
@@ -34,8 +31,7 @@ module.exports = {
                 Phone: data.phone,
                 Password: data.password
             });
-            console.log("user criado vei");
-            res.redirect('/');
+            res.redirect('/userpageconvert');
         }
 
     },
