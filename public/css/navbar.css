@@ -16,6 +16,11 @@ header {
     transition: color 0.3s ease;
 }
 
+.login-icon {
+    color: var(--light-pink);
+    font-size: 22px;
+}
+
 #nav-computer a:hover {
     color: var(--light-grey);
 }
@@ -24,8 +29,27 @@ header {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    color: #0E2431;
 }
 
 #nav-mobile a:hover {
     color: var(--light-grey);
+}
+
+@media (max-width: 800px) {
+    #nav-computer {
+        display: none;
+    }
+} 
+
+@media (min-width: 800px) and (max-width: 900px) {
+    #nav-computer {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    #nav-mobile {
+        display: none;
+    }
 }

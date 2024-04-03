@@ -43,6 +43,11 @@ main {
     z-index: 99;
 }
 
+#form-user p {
+    align-self: center;
+    margin-top: 20px;
+}
+
 form {
     width: 100%;
     height: 100%;

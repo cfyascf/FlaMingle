@@ -8,99 +8,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/register.css">
+    <script src="../script/smoothNav.js"></script>
     <script src="../script/autofill.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <header style="z-index: 999;">
-        <nav id="nav-computer" class="navbar bg-body-tertiar" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
-            <div class="container-fluid d-flex align-items-center justify-content-start">
-              <a class="navbar-brand" href="#">
+  <header style="z-index: 999;">
+    <nav id="nav-computer" class="navbar bg-body-tertiar" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
+        <div class="container-fluid d-flex align-items-center justify-content-start" style="width: 90%;">
+          <a class="navbar-brand" href="#">
+            <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+          </a>
+            <a href="/" style="margin-right: 25px;">Página Inicial</a>
+        </div>
+        <div class="loginbutton" style="width: 10%;">
+          <a href="/registeruser" style="color: var(--light-pink);">Login</a><i class='bx bx-log-in login-icon'></i>
+        </div>
+      </nav>
+      <nav id="nav-mobile" class="navbar bg-body-tertiary fixed-top position-fixed" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
                 <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
               </a>
-                <a href="" style="margin-right: 25px;">Página Inicial</a>
-                <li class="nav-item dropdown" style="list-style-type: none;">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 8px;">
-                        Para Você
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Instagram</a></li>
-                        <li><a class="dropdown-item" href="#">Facebook</a></li>
-                        <li><a class="dropdown-item" href="#">Twitter</a></li>
-                    </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#7C7879" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-weight: 600;">Flamingle</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link  dropdown-item" aria-current="page" href="#">Página Inicial</a>
                 </li>
-                <li class="nav-item dropdown" style="list-style-type: none;">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 20px;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         O FlaMingle
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Sobre nós</a></li>
+                        <li><a class="dropdown-item" href="#">Sobre Nós</a></li>
                         <li><a class="dropdown-item" href="#">Funcionalidades</a></li>
-                        <li><a class="dropdown-item" href="#">Unidades</a></li>
                     </ul>
                 </li>
-                <a href="" style="margin-right: 10px;">Contato</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+                </li>
+              </ul>
             </div>
-          </nav>
-          <nav id="nav-mobile" class="navbar bg-body-tertiary fixed-top position-fixed" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
-                  </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#7C7879" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                  </svg>
-              </button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-weight: 600;">Flamingle</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Para Você
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Instagram</a></li>
-                            <li><a class="dropdown-item" href="#">Facebook</a></li>
-                            <li><a class="dropdown-item" href="#">Twitter</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            O FlaMingle
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Sobre Nós</a></li>
-                            <li><a class="dropdown-item" href="#">Funcionalidades</a></li>
-                            <li><a class="dropdown-item" href="#">Unidades</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Contato</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-    </header>
+          </div>
+        </div>
+      </nav>
+</header>
     <main>
         <div class="left-side">
             <h2>Preencha suas informações para se cadastrar no <span>FlaMingle.</span></h2>
             <img src="../img/register-user (1).png" alt="">
         </div>
         <div class="right-side">
-            <form action="/registeruser" method="post">
+            <form id="form-user" action="/registeruser" method="post">
+                <p style="color: rgb(255, 0, 76)"><%= sexo.message%></p>
                 <input id="cpf-input" type="text" name="cpf" maxlength="14" required>
                 <span class="label">CPF</span>
 

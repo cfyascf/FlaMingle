@@ -20,7 +20,7 @@ const user = database.define('User', {
     },
 
     Birth: {
-        type: sequelize.STRING(10),
+        type: sequelize.DATE,
         allowNull: false,
     },
 

@@ -10,28 +10,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/navuser.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../script/smoothNav.js" defer></script>
+    <script src="../script/autofill.js" defer></script>
+    <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <title>Flamingle</title>
 </head>
 <body style="color: #0E2431;">
     <header style="z-index: 999;">
         <nav id="nav-computer" class="navbar bg-body-tertiar" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
-            <div class="container-fluid d-flex align-items-center justify-content-start">
+            <div class="container-fluid d-flex align-items-center justify-content-start" style="width: 90%;">
               <a class="navbar-brand" href="#">
                 <img src="../img/logo-transparente.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
               </a>
-                <a href="" style="margin-right: 25px;">Página Inicial</a>
+                <a href="" class="x active" onclick="toggleActive(event)" style="margin-right: 25px;">Página Inicial</a>
                 <li class="nav-item dropdown" style="list-style-type: none;">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 20px;">
                         O FlaMingle
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Sobre nós</a></li>
-                        <li><a class="dropdown-item" href="#">Funcionalidades</a></li>
+                        <li><a class="dropdown-item x" onclick="toggleActive(event)"  href="#">Sobre nós</a></li>
+                        <li><a class="dropdown-item x" onclick="toggleActive(event)" href="#">Funcionalidades</a></li>
                     </ul>
                 </li>
-                <a href="/registeruser" style="margin-right: 10px;">Contato</a>
+                <a href="" class="x" onclick="toggleActive(event)" style="margin-right: 10px;">Contato</a>
+            </div>
+            <div class="d-flex align-items-center justify-content-start gap-1" style="width: 10%;">
+              <a href="/login" style="color: var(--light-pink);">Login</a><i class='bx bx-log-in login-icon'></i>
             </div>
           </nav>
           <nav id="nav-mobile" class="navbar bg-body-tertiary fixed-top position-fixed" style="box-shadow: 0 1px 4px rgba(146, 161, 176, 0.6);">
@@ -52,17 +61,7 @@
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Para Você
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Instagram</a></li>
-                            <li><a class="dropdown-item" href="#">Facebook</a></li>
-                            <li><a class="dropdown-item" href="#">Twitter</a></li>
-                        </ul>
+                      <a class="nav-link  dropdown-item" aria-current="page" href="#">Página Inicial</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,11 +70,13 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Sobre Nós</a></li>
                             <li><a class="dropdown-item" href="#">Funcionalidades</a></li>
-                            <li><a class="dropdown-item" href="#">Unidades</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
                     </li>
                   </ul>
                 </div>
@@ -84,29 +85,33 @@
           </nav>
     </header>
     <main>
-      <section id="home" class="d-flex justify-content-center align-items-center" style="height: 100vh; padding: 0 10%;">
-          <div id="home-img" class="position-absolute"></div>
-            <div id="home-content" class="d-flex flex-column align-items-start justify-content-center">
-              <h1 id="home-title" style="font-weight: 700;">Dê um Mingle!</h1>
-            </div>
-          <div id="input-container" class="card d-flex" style="border-radius: 20px; box-shadow:0px 10px 36px rgba(0, 0, 0, 0.4);">
-            <div class="card-body">
-              <h5 id="card-title" class="card-title" style="margin-bottom: 20px;">Crie sua conta FlaMingle!</h5>
-              <input id="input-home" class="form-control" name="cpf" action="/" method="post" type="text" placeholder="Digite seu CPF" style="padding: 10px; margin-bottom: 40px; border: none; border-bottom: 1px solid black; border-radius: 0;">
-              <a href="#" id="btn-home" class="btn btn-primary">Continuar 🡢</a>
-            </div>
+      <section id="home" class="home d-flex justify-content-center align-items-center" style="height: 100vh; padding: 0 10%;">
+        <div id="home-img" class="position-absolute"></div>
+          <div id="home-content" class="d-flex flex-column align-items-start justify-content-center">
+            <h1 id="home-title" style="font-weight: 700;">Dê um Mingle!</h1>
           </div>
+        <div id="input-container" class="card d-flex" style="border-radius: 20px; box-shadow:0px 10px 36px rgba(0, 0, 0, 0.4);">
+          <div class="card-body">
+            <h5 id="card-title" class="card-title" style="margin-bottom: 20px;">Crie sua conta FlaMingle!</h5>
+            <form id="home-cpfinput" action="/" method="post">
+              <input id="cpf-input" name="cpf" class="form-control" type="text" placeholder="Digite seu CPF" maxlength="14" style="padding: 10px; margin-bottom: 40px; border: none; border-bottom: 1px solid black; border-radius: 0;">
+              <p style="color: rgb(255, 0, 76)"><%= warning.message%></p>
+              <input type="submit" href="#" id="btn-home" class="btn btn-primary" style="width: 100%;"></input>
+            </form>
+          </div>
+        </div>
       </section>
-      <section id="cards">
+      <section class="cards">
         <div class="card-container">
           <div class="content">
             <div class="card-self">
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Investimentos</h3>
+                  <h3>Câmbio</h3>
                 </div>
-                <p>Potencialize suas finanças com nossa plataforma de investimentos integrada. Acesse uma variedade de opções de investimento, desde ações e títulos até fundos mútuos e ETFs.</p>
+                <p>
+                  Oferecemos +160 moedas atualizadas em tempo real. Com essa vasta gama de moedas disponíveis, nossos usuários podem facilmente realizar conversões entre qualquer par de moedas desejado.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -114,9 +119,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Carteira Inteligente</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Nós integramos os cartões do usuário em um aplicativo único, simplificando pagamentos, oferecendo conveniência e segurança, garantindo uma experiência de transação eficiente, integrada e acessível em um só lugar.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -124,9 +129,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Pix</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Nossa geração de QR Code para PIX simplifica transações financeiras, permitindo pagamentos instantâneos. Essa tecnologia agiliza processos, promovendo conveniência e eficiência em transações digitais, fortalecendo sua economia.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -134,9 +139,9 @@
               <div class="card-content">
                 <div class="card-title">
                   <img src="../img/bank.svg">
-                  <h3>Title</h3>
+                  <h3>Calendário Financeiro</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates ad dolorem ex nobis fugit, aspernatur quia modi, corporis fuga eos commodi suscipit itaque vel, earum nulla animi. Odio, eligendi.</p>
+                <p>Permitimos que nossos usuários programem pagamentos e recebam lembretes para despesas futuras. Promovendo organização, garantindo que compromissos financeiros sejam cumpridos pontualmente, evitando atrasos e penalidades.</p>
                 <a href="" style="color: var(--light-pink)">Saiba mais</a>
               </div>
             </div>
@@ -145,15 +150,15 @@
           <div class="swiper-buttd-flex flex-column justify-content-center align-items-centeron-prev"></div>
         </div>
       </section>
-      <section id="about" class="d-flex justify-content-center align-items-center" style="background-color: var(--light-pink); padding: 0 10%;">
+      <section id="about" class="about d-flex justify-content-center align-items-center" style="background-color: var(--light-pink); padding: 0 10%;">
         <img id="about-img" src="../img/about.jpg" alt="">
-        <div id="about-text" class="d-flex flex-column align-items-start justify-content-center" style="color: black;">
-          <h3>Tudo o que você precisa.</h3>
-          <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta sed repellendus, id consequatur necessitatibus omnis eligendi odio, odit laudantium, rem excepturi hic fugiat? Laborum quod aut asperiores placeat officia!</p>
-          <a href="" style="text-decoration: none; color: black">Saiba mais 🡢</a>
+        <div id="about-text" class="d-flex flex-column align-items-start justify-content-center" style="color: #0E2431;">
+          <h2 style="font-weight:700;">Tudo o que você precisa.</h2>
+          <p style="text-align: justify;">A razão de ser do FlaMingle é oferecer a seus clientes uma experiência de conforto e flexibilidade no domínio de seus recursos financeiros. Nós colocamos você no centro, priorizando as suas necessidades na organização transparente da vida financeira e te dando as oportunidades de aprendizado e educação que fazem a diferença pro seu futuro. #ComFlaÉFácil. </p>
+          <a href="" style="text-decoration: none; color: #0E2431">Saiba mais 🡢</a>
         </div>
       </section>
-      <section id="contact" class="" style="padding: 0 10%;">
+      <section id="contact" class="contact" style="padding: 0 10%;">
         <h1 style="font-weight: 700;">Quer entrar em <span style="color: var(--light-pink);">contato?</span></h1>
         <p>Gostaríamos muito de ouvir você. Clique para nos contatar:</p>
         <div id="social-media" style="width: 100%; height: 100%">
@@ -177,6 +182,17 @@
           </a>
         </div>
       </section>
-    </main>     
+    </main>
+    <footer>
+      <p class="footer-title">Flamingle</p>
+      <div class="footer-social">
+          <a href="https://github.com/mavigpimenta/" class="footer-icon"><i class='bx bxl-github'></i></a>
+          <a href="https://br.linkedin.com/in/mariagpimenta" class="footer-icon"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/mavigpimenta/" class="footer-icon"><i class='bx bxl-github'></i></a>
+          <a href="https://br.linkedin.com/in/mariagpimenta" class="footer-icon"><i class='bx bxl-linkedin'></i></a>
+      </div>
+      <p class="footer-copyright">&#169; Maria Vitória Garcia Pimenta & Yasmim da Cunha Freitas. All rigths reserved</p>
+  </footer>
+  </footer>     
 </body>
 </html>

@@ -24,6 +24,13 @@
     padding: 35px;
 }
 
+#home-cpfinput p{
+    position: absolute;
+    top: 150px;
+    left: 46px;
+    font-size: 0.9rem;
+}
+
 #social-media {
     display: flex;
     justify-content: center;
