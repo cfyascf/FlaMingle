@@ -24,6 +24,24 @@
     padding: 35px;
 }
 
+.card-content p{
+    text-align: initial;
+}
+
+#contact h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#contact p {
+    display: flex;
+    justify-content: center;
+}
+
+#about-link:hover {
+    color: white;
+}
+
 #social-media {
     display: flex;
     justify-content: center;
