@@ -28,3 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		e.target.value = cpfPattern;
 	});
 }); // script para verificar o cpf
+
+
+
+INSERIR NO POST PARA SQL DO LOGIN
+// Nome padrão da foto
+let foto = 'usuario.png';
+// Verificando se foi enviada alguma foto
+if (req.file) {
+// Pegar novo nome da foto
+foto = req.file.filename;
+}
+
