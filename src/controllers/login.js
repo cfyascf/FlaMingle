@@ -1,18 +1,18 @@
 const db = require('../config/db');
 const sequelize = require('sequelize');
 
-const warning = {message: "Usuário não encontrado", code: 202};
-
 module.exports = {
     async loginGet(req, res) {
-        res.render('login', { warning: '' });
+        res.render('login');
     },
 
     async loginPost(req, res) {
         const data = req.body;
 
+        const clean_cpf = data.cpf.replace(/[.-]/g, '');
+
         const query = 'SELECT * FROM Users WHERE CPF = :cpf AND Password = :password';
-        const parameters = { cpf: data.cpf, password: data.password }; 
+        const parameters = { cpf: clean_cpf, password: data.password }; 
 
         const result = await db.query(query, {
             replacements: parameters,
@@ -24,7 +24,7 @@ module.exports = {
         }
 
         else {
-            res.render('login', { warning: '' });
+            res.redirect('/login');
         }
     }
 }
