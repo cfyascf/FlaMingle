@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/userHome.css">
-    <link rel="stylesheet" href="../css/titleCurrency.css">
-    <link rel="stylesheet" href="../css/userPage.css">
+    <link rel="stylesheet" href="../css/titleHome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384- +0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -18,30 +17,26 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/wallet.css">
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="../script/wallet.js" defer></script>
-    <script src="../script/flImage.js" defer></script>
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
+    <script defer src="../script/flImage.js"></script>
     <title>Flamingle</title>
 </head>
 
 <body style="color: #0E2431;">
-    <main class="cd-main d-block" style="height: 130vh;">
-        <div class="profile-page d-flex justify-content-center align-items-center" style=" height: 130vh;">
+    <main class="cd-main d-block">
+        <div class="profile-page d-flex justify-content-center align-items-center">
             <div class="content">
-                <div>
-                    <div class="content-cover position-relative">
-                        <div class=" mb-3 d-flex justify-content-center">
-                            <form action="" method="post" enctype="multipart/form-data">
-                                <input type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
-                                <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto"
-                                    src="../img/" alt="">
+                <div class="content-cover position-relative">
+                    <div class=" mb-3 d-flex justify-content-center">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <input  type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
+                            <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto" src="../img/default-pp.png" alt="" >
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
-                        </div>
                     </div>
+                  </div>
+
                     <div class="content-title">
                         <h1>Mavizokas Pimentinha</h1><span>Curitiba, Brasilzao</span>
                     </div>
@@ -75,45 +70,13 @@
                             </svg>
                         </a>
                     </div>
-                    <section id="wallet" class="d-flex justify-content-center align-items-center flex-column">
-                        <div class="slider">
-                            <div class="card">
-                                <img name="cardImg" src="https://www.mobills.com.br/blog/wp-content/uploads/2022/01/Cartao-de-credito-AME-Mastercard.jpg" alt="">
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://s3.amazonaws.com/marketplace.comparaonline.com/marketplace/logos/products/pan-basico.png" alt="">
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://banco.bradesco/html/classic/produtos-servicos/cartoes/assets/images/cards/bradesco-like-visa.png" alt="">
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://pontospravoar.com/wp-content/uploads/2022/09/click_carta%CC%83o-digital.png" alt="">
-                            </div>
-                        </div>
-                        <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                            <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                <h6>Número</h6>
-                                <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                            </div>
-                            <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                <h6>Nome</h6>
-                                <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                            </div>
-                            <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                <h6>Validade</h6>
-                                <p style="font-weight: 400;">03/28</p>
-                            </div>
-                        </div>
-                        <button id="next">❯</button>
-                        <button id="prev">❮</button>
-                    </section>
+                </div>
+                <div class="bg">
+                    <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
                 </div>
             </div>
-            <div class="bg">
-                <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
     </main>
 </body>
+
 </html>

@@ -1,0 +1,200 @@
+#wallet{
+    position: relative;
+    width: 1000px;
+    margin-top: 10px;
+    height: 60vh;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card-content {
+    background-color: #cfcfcf;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:  0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    background-color: #fff;
+    padding: 20px;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    border: none;
+}
+
+.card img {
+    border-radius: 20px;
+    width: 300px;
+
+}
+
+.slider .card {
+    opacity: 1;
+}
+
+#next, #prev {
+    position: absolute;
+    color: var(--strong-pink);
+    background-color: transparent;
+    border: none;
+    font-size: xx-large;
+    font-weight:700;
+    left: 50px;
+
+}
+
+#next {
+    left: unset;
+    right: 45px;
+}
+
+#prev {
+    right: unset;
+}
+
+
+@media (max-width: 375px) {
+    .content-title {
+        width: 300px;
+        margin-left: 10px;
+    }
+    #wallet {
+        width: 320px;
+        height: 60vh;
+    }
+    .slider img {
+        width: 180px;
+        border-radius: 7px;
+    }
+    .buttons-views {
+        margin-bottom: 80px;
+    }
+    .card-content {
+        width: 300px;
+        margin-top: 30px;
+        background-color: #fff;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px){
+    .content-title {
+        width: 375px;
+        margin-left: 10px;
+    }
+    #wallet {
+        width: 375px;
+        height: 100vh;
+    }
+    .slider img {
+        width: 300px;
+        height: 200px;
+    }
+    .card-content {
+        width: 300px;
+        background-color: #fff;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px){
+    .content-title {
+        width: 380px;
+    }
+    #wallet {
+        width: 425px;
+        height: 40vh;
+    }
+    .slider img {
+        width: 200px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+    }
+    .card-content {
+        margin-top: 30px;
+        background-color: #fff;
+        box-shadow: none;
+    }
+    .card {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px){
+    .content-title {
+        width: 450px;
+    }
+    #wallet {
+        width: 450px;
+        height: 40vh;
+    }
+    .slider img {
+        width: 250px;
+        border-radius: 8px;
+        margin-bottom: 100px;
+        margin-top: 50px;
+    }
+    .card-content {
+        width: 350px;
+        margin-top:0px;
+    }
+    .card {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .content-title {
+        width:768px;
+    }
+    #wallet {
+        width: 768px;
+        height: 40vh;
+    }
+    .slider img {
+        width: 300px;
+        border-radius: 12px;
+        margin-bottom: 40px
+
+    }
+    .card-content {
+        width: 300px;
+        
+    }
+    .card {
+        margin-top: 40px;
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-title {
+        width:1024px;
+    }
+    #wallet {
+        width: 1024px;
+        height: 70vh;
+    }
+    .slider img {
+        width: 350px;
+        border-radius: 14px;
+    }
+    .card-content {
+        width: 350px;
+    }
+}

@@ -20,7 +20,7 @@ module.exports = {
         })
 
         if(result.length > 0) {
-            res.redirect('/userpageconvert');
+            res.redirect('/userpage');
         }
 
         else {

@@ -18,6 +18,8 @@ route.post('/login', login.loginPost);
 route.get('/registeruser', register.registerGet);
 route.post('/registeruser', register.registerPost);
 
+route.get('/userpage', userpage.userpageGet);
 route.get('/userpageconvert', userpage.userpageconvertGet);
+route.get('/userpagewallet', userpage.userpagewalletGet);
 
 module.exports = route;

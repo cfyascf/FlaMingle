@@ -31,6 +31,11 @@
     font-size: 0.9rem;
 }
 
+#contact h1, p {
+    display: flex;
+    justify-content: center;
+}
+
 #social-media {
     display: flex;
     justify-content: center;
@@ -148,9 +153,6 @@
     }
     #about-text h3 {
         font-size: var(--h3-font-size);
-    }
-    #about-text a, p {
-        font-size: var(--p-font-size);
     }
     #social-media {
         flex-direction: column;

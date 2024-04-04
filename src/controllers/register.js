@@ -51,7 +51,7 @@ module.exports = {
                 Phone: clean_phone,
                 Password: data.password
             });
-            return res.redirect('/userpageconvert');
+            return res.redirect('/userpage');
         }
 
     },
