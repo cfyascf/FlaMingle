@@ -1,0 +1,68 @@
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-content {
+    border-radius: 18px ;
+}
+input {
+    border-bottom: 1px solid #ccc;
+    line-height: 35px;
+    padding:5px 15px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.label {
+    position: relative;
+    top: -33px;
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+input:focus + .label, input:valid + .label {
+    transform: translateY(-40px);
+    outline: none;
+    font-size: 13px;
+}
+
+.checkbox {
+    height: fit-content;
+}
+
+.checkbox label a {
+    color: var(--light-pink);
+}
+
+.checkbox input {
+    margin: 0;
+}
+
+.agreements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#register-submitbtn {
+    width: 100%;
+    align-self: center;
+    border: 0;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.6s ease;
+}
+
+#register-submitbtn:hover {
+    background-color: var(--light-pink);
+}

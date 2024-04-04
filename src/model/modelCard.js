@@ -26,8 +26,8 @@ const card = database.define('Card', {
         allowNull: false
     },
 
-    UserID: {
-        type: sequelize.INTEGER,
+    UserCPF: {
+        type: sequelize.STRING(14),
         allowNull: false
     },
 
@@ -37,8 +37,8 @@ const card = database.define('Card', {
     }
 });
 
-card.belongsTo(user, { foreignKey: UserID });
-user.hasMany(card, { foreignKey: UserID });
+card.belongsTo(user, { foreignKey: CPF });
+user.hasMany(card, { foreignKey: UserCPF });
 
 card.belongsTo(bank, { foreignKey: BankCode });
 bank.hasMany(card, { foreignKey: BankCode });
@@ -49,4 +49,4 @@ database.sync()
     })
     .catch(() => {
         console.error('error');
-    });
+});

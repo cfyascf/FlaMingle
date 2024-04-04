@@ -34,7 +34,6 @@ const user = database.define('User', {
         allowNull: false
     },
 
-
     Password: {
         type: sequelize.STRING(36),
         allowNull: false

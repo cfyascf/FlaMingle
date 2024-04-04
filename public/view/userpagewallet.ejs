@@ -114,6 +114,41 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Criar Cartão</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-user" action="/userpagewallet" method="post">
+                        <input id="number-input" type="text" name="numbercard" maxlength="16" required>
+                        <span class="label">Número do Cartão</span>
+        
+                        <input id="username-input" type="text" name="name" required>
+                        <span class="label">Nome Completo</span>
+        
+                        <input id="userbirth-input" type="text" name="validity" maxlength="5" required>
+                        <span class="label">Validade</span>
+
+                        <input id="cvv-input" type="text" name="cvv" maxlength="3" required>
+                        <span class="label">CVV</span>
+        
+                        <div class="agreements">
+                          <div class="checkbox">
+                              <input type="checkbox" required>
+                              <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" id="register-submitbtn">
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 </body>
 </html>

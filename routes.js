@@ -20,6 +20,8 @@ route.post('/registeruser', register.registerPost);
 
 route.get('/userpage', userpage.userpageGet);
 route.get('/userpageconvert', userpage.userpageconvertGet);
+
 route.get('/userpagewallet', userpage.userpagewalletGet);
+route.post('/userpagewallet', userpage.userwalletPost);
 
 module.exports = route;
