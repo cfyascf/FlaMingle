@@ -19,6 +19,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/wallet.css">
+    <link rel="stylesheet" href="../css/formCard.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="../script/wallet.js" defer></script>
     <script src="../script/flImage.js" defer></script>
@@ -74,6 +75,11 @@
                                 </path>
                             </svg>
                         </a>
+                        <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="" id="balloon">
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </a>
                     </div>
                     <section id="wallet" class="d-flex justify-content-center align-items-center flex-column">
                         <div class="slider">
@@ -114,6 +120,41 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Criar Cartão</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-user" action="/registeruser" method="post">
+                        <input id="number-input" type="text" name="number-card" maxlength="16" required>
+                        <span class="label">Número do Cartão</span>
+        
+                        <input id="username-input" type="text" name="name" required>
+                        <span class="label">Nome Completo</span>
+        
+                        <input id="userbirth-input" type="text" name="birth" maxlength="5" required>
+                        <span class="label">Validade</span>
+
+                        <input id="cvv-input" type="text" name="birth" maxlength="3" required>
+                        <span class="label">CVV</span>
+        
+                        <div class="agreements">
+                          <div class="checkbox">
+                              <input type="checkbox" required>
+                              <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" id="register-submitbtn">
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 </body>
 </html>
