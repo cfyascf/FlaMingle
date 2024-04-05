@@ -4,13 +4,14 @@ const user = require('../model/modelUser');
 
 module.exports = {
     async registerGet(req, res) {
-        res.render('registeruser');
+        res.render('registeruser', { cpf });
     },
 
     async registerPost(req, res) {
 
         const data = req.body;
         const clean_cpf = data.cpf.replace(/[.-]/g, '');
+        cpf = clean_cpf;
         const clean_phone = data.phone.replace(/\s/g, '');
         const clean_birth = data.birth.replace(/\//g, '');
         const formatted_birth = `${clean_birth.substr(4, 4)}-${clean_birth.substr(2, 2)}-${clean_birth.substr(0, 2)}`;
@@ -39,19 +40,24 @@ module.exports = {
         })
 
         if(result.length > 0 || age < 18) {
-            return res.render('registeruser'); 
+            return res.render('registeruser', { cpf }); 
         }
            
         else {
+            const name = data.name;
+            const email = data.email;
+            let photo = 'public\\img\\usuario.png';
+
             await user.create ({
                 UserCPF: clean_cpf,
-                Name: data.name,
+                Name: name,
                 Birth: formatted_birth,
-                Email: data.email,
+                Email: email,
                 Phone: clean_phone,
-                Password: data.password
+                Password: data.password,
+                Photo: photo
             });
-            return res.redirect('/userpage');
+            return res.render('userpage', { cpf, name, formatted_birth, email, photo });
         }
 
     },

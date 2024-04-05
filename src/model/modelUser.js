@@ -31,6 +31,11 @@ const user = database.define('User', {
     Password: {
         type: sequelize.STRING(36),
         allowNull: false
+    },
+
+    Photo: {
+        type: sequelize.STRING(50),
+        allowNull: false
     }
 });
 

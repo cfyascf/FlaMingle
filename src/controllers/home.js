@@ -1,4 +1,5 @@
 const warning = {message: "CPF inválido!", code: 202};
+global.cpf = '';
 
 module.exports = {
         async homeGet(req, res) {
@@ -6,24 +7,23 @@ module.exports = {
         },
 
         async homePost(req, res) {
-
             const data = req.body;
-            let cpf = data.cpf;
-            cpf = cpf.replace(/[^\d]/g, ''); 
+            cpf = data.cpf;
+            clean_cpf = cpf.replace(/[^\d]/g, ''); 
 
-            if (cpf.length !== 11){
+            if (clean_cpf.length !== 11){
                 return res.render('index', { warning }); 
             } 
 
             let sum = 0;
             let remainder;
 
-            if (/^(\d)\1{10}$/.test(cpf)) {
+            if (/^(\d)\1{10}$/.test(clean_cpf)) {
                 return res.render('index', { warning }); 
             }
 
             for (let i = 1; i <= 10; i++) {
-                sum += parseInt(cpf.substring(i - 1, i)) * (12 - i); 
+                sum += parseInt(clean_cpf.substring(i - 1, i)) * (12 - i); 
             }
             
             remainder = (sum * 10) % 11;
@@ -31,10 +31,10 @@ module.exports = {
             if ((remainder === 10) || (remainder === 11))
                 remainder = 0;
 
-            if (remainder !== parseInt(cpf.substring(10, 11))){
+            if (remainder !== parseInt(clean_cpf.substring(10, 11))){
                 return res.render('index', { warning }); 
             }
 
-            res.render('registeruser');
+            res.render('registeruser', { cpf });
         }
 }

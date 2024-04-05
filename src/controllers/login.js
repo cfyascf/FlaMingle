@@ -19,8 +19,14 @@ module.exports = {
             type: sequelize.QueryTypes.SELECT
         })
 
+        const cpf = result.UserCPF;
+        const name = result.Name;
+        const formatted_birth = result.Birth;
+        const email = result.Email;
+        const photo = result.Photo;
+
         if(result.length > 0) {
-            res.redirect('/userpage');
+            res.render('userpage',  { cpf, name, formatted_birth, email, photo });
         }
 
         else {

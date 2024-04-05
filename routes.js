@@ -1,3 +1,9 @@
+// Iniciando Multer
+const multer = require("multer");
+
+// Recebendo arquivo do multer que criamos
+const config = require('./src/config/multer');
+
 // Iniciando Route do Express
 const express = require('express');
 const route = express.Router();
@@ -7,6 +13,7 @@ const home = require('./src/controllers/home');
 const register = require('./src/controllers/register');
 const login = require('./src/controllers/login');
 const userpage = require('./src/controllers/userpage');
+const edit = require('./src/controllers/edit');
 
 // Iniciando as rotas
 route.get('/', home.homeGet);
@@ -19,6 +26,8 @@ route.get('/registeruser', register.registerGet);
 route.post('/registeruser', register.registerPost);
 
 route.get('/userpage', userpage.userpageGet);
+route.post('/userpage', multer(config).single('photo'), edit.photoAdd);
+
 route.get('/userpageconvert', userpage.userpageconvertGet);
 
 route.get('/userpagewallet', userpage.userpagewalletGet);

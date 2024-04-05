@@ -18,7 +18,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
-    <script defer src="../script/flImage.js"></script>
+    <script defer src="script/flImage.js"></script>
     <title>Flamingle</title>
 </head>
 
@@ -30,7 +30,7 @@
                     <div class=" mb-3 d-flex justify-content-center">
                         <form action="" method="post" enctype="multipart/form-data">
                             <input  type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
-                            <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto" src="../img/default-pp.png" alt="" >
+                            <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto" src="../img/usuario.png" alt="" >
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
@@ -38,11 +38,11 @@
                   </div>
 
                     <div class="content-title">
-                        <h1>Mavizokas Pimentinha</h1><span>Curitiba, Brasilzao</span>
+                        <h1><%= name%></h1><span><%= cpf%></span>
                     </div>
                     <div class="content-description">
-                        <p>26/07/2006</p>
-                        <p>mavissss@gmail.com</p>
+                        <p><%= formatted_birth%></p>
+                        <p><%= email%></p>
                     </div>
                     <div class="buttons-views gap-3">
                         <a href="/userpageconvert" title="currentConvert">

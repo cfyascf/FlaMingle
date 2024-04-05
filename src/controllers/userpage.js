@@ -1,11 +1,24 @@
 const db = require('../config/db');
 const sequelize = require('sequelize');
 const card = require('../model/modelCard');
-
+const user = require('../model/modelUser');
 
 module.exports = {
     async userpageGet(req, res) {
-        res.render('userpage');
+        const query = 'SELECT * FROM Users WHERE UserCPF = :cpf';
+        const parameters = { cpf:  cpf}; 
+
+        const result = await db.query(query, {
+            replacements: parameters,
+            type: sequelize.QueryTypes.SELECT
+        })
+
+        const name = result.Name;
+        const birth = result.Birth;
+        const email = result.Email;
+        const photo = result.Photo;
+
+        res.render('userpage', { cpf, name, birth, email, photo });
     },
 
     async userpageconvertGet(req, res) {

@@ -8,7 +8,7 @@ function loadShow() {
     items[active].style.transform = `none`;
     items[active].style.zIndex = -stt;
     items[active].style.filter = 'none';
-    items[active].style.opacity = 0.9;
+    items[active].style.opacity = 1;
 
     for (var i = active + 1; i < items.length; i++) {
         stt++;
