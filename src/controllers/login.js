@@ -11,7 +11,7 @@ module.exports = {
 
         const clean_cpf = data.cpf.replace(/[.-]/g, '');
 
-        const query = 'SELECT * FROM Users WHERE CPF = :cpf AND Password = :password';
+        const query = 'SELECT * FROM Users WHERE UserCPF = :cpf AND Password = :password';
         const parameters = { cpf: clean_cpf, password: data.password }; 
 
         const result = await db.query(query, {

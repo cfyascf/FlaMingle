@@ -30,7 +30,7 @@ module.exports = {
             age--;
         }
 
-        const query = 'SELECT * FROM Users WHERE CPF = :cpf';
+        const query = 'SELECT * FROM Users WHERE UserCPF = :cpf';
         const parameters = { cpf: clean_cpf }; 
 
         const result = await db.query(query, {
@@ -44,7 +44,7 @@ module.exports = {
            
         else {
             await user.create ({
-                CPF: clean_cpf,
+                UserCPF: clean_cpf,
                 Name: data.name,
                 Birth: formatted_birth,
                 Email: data.email,

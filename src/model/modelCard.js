@@ -25,23 +25,23 @@ const card = database.define('Card', {
         type: sequelize.CHAR(4),
         allowNull: false
     },
+    
+    BankCode: {
+        type: sequelize.NUMERIC(3),
+        allowNull: false
+    },
 
     UserCPF: {
         type: sequelize.STRING(14),
         allowNull: false
-    },
-
-    BankCode: {
-        type: sequelize.NUMERIC(3),
-        allowNull: false
     }
 });
 
-card.belongsTo(user, { foreignKey: CPF });
-user.hasMany(card, { foreignKey: UserCPF });
+card.belongsTo(user, { foreignKey: 'UserCPF' });
+user.hasMany(card, { foreignKey: 'UserCPF' });
 
-card.belongsTo(bank, { foreignKey: BankCode });
-bank.hasMany(card, { foreignKey: BankCode });
+card.belongsTo(bank, { foreignKey: 'BankCode' });
+bank.hasMany(card, { foreignKey: 'BankCode' });
 
 database.sync()
     .then(() => {
@@ -50,3 +50,5 @@ database.sync()
     .catch(() => {
         console.error('error');
 });
+
+module.exports = card;
