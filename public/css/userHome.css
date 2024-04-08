@@ -14,17 +14,12 @@ body {
     padding-top: 5rem;
 }
 
-.resize-me {
-    height: 100%;
-}
-
 .profile-page .content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    min-height: fit-content;
+    width: 1024px;
     z-index: 2;
     padding: 2rem;
     background: #fff;
@@ -33,7 +28,7 @@ body {
 }
 
 .profile-page .content-cover {
-    background: var(--strong-pink);
+    background: var(--light-pink);
 }
 
 .profile-page .content-bull {
@@ -165,11 +160,5 @@ body {
     .profile-page .content-avatar {
         width: 10rem;
         height: 10rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .profile-page .content {
-        padding: 0;
     }
 }

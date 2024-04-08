@@ -8,7 +8,7 @@
 .slider {
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 50%;
     overflow: hidden;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,6 @@
     display: flex;
     top: 0;
     border: none;
-    gap: 30px;
 }
 
 .card img {
@@ -50,7 +49,7 @@
 
 #next, #prev {
     position: absolute;
-    color: var(--strong-pink);
+    color: var(--light-pink);
     background-color: transparent;
     border: none;
     font-size: xx-large;
@@ -94,20 +93,12 @@
 }
 
 @media (min-width: 375px) and (max-width: 425px){
-    .content {
-        padding:0;
-        width: 100%;
-    }
-
-    .resize-me {
-        width: 100%;
-    }
     .content-title {
         width: 375px;
         margin-left: 10px;
     }
     #wallet {
-        width: 100%;
+        width: 375px;
         height: 100vh;
     }
     .slider img {
@@ -118,6 +109,28 @@
         width: 300px;
         background-color: #fff;
         box-shadow: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px){
+    .content-title {
+        width: 380px;
+    }
+    #wallet {
+        width: 425px;
+        height: 40vh;
+    }
+    .slider img {
+        width: 200px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+    }
+    .card-content {
+        margin-top: 30px;
+        
+    }
+    .card {
+        margin-top: 20px;
     }
 }
 
@@ -142,7 +155,6 @@
     }
     .card {
         margin-top: 20px;
-        width: 100%;
     }
 }
 

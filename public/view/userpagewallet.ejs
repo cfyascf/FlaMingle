@@ -37,18 +37,18 @@
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
                                 <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto"
-                                    src="../img/usuario.png" alt="">
+                                src="<%= photo%>" alt="">
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                     <div class="content-title">
-                        <h1>Mavizokas Pimentinha</h1><span>Curitiba, Brasilzao</span>
+                        <h1><%= db_name%></h1><span><%= cpf%></span>
                     </div>
                     <div class="content-description">
-                        <p>26/07/2006</p>
-                        <p>mavissss@gmail.com</p>
+                        <p><%= birth%></p>
+                        <p><%= email%></p >
                     </div>
                     <div class="buttons-views gap-3">
                         <a href="/userpageconvert" title="currentConvert">
@@ -150,6 +150,23 @@
                                         <p style="font-weight: 400;">03/28</p>
                                     </div>
                                 </div>
+                                <div class="card">
+                                    <img name="cardImg" src="https://pontospravoar.com/wp-content/uploads/2022/09/click_carta%CC%83o-digital.png" alt="">
+                                    <div class="card-content d-flex justify-content-center flex-column align-items-start">
+                                        <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+                                            <h6>Número</h6>
+                                            <p style="font-weight: 400;">0000 0000 0000 0000</p>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+                                            <h6>Nome</h6>
+                                            <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+                                            <h6>Validade</h6>
+                                            <p style="font-weight: 400;">03/28</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button id="next"> ❯</button>
@@ -170,32 +187,32 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-user" action="/registeruser" method="post">
-                        <input id="number-input" type="text" name="numbercard" maxlength="16" required>
+                    <form id="form-user" action="/userpagewallet" method="post">
+                        <input id="number-input" type="text" name="cardnumber" maxlength="16" required>
                         <span class="label">Número do Cartão</span>
         
                         <input id="username-input" type="text" name="name" required>
                         <span class="label">Nome Completo</span>
         
-                        <input id="userbirth-input" type="text" name="validity" maxlength="5" required>
+                        <input id="userbirth-input" type="text" name="expdate" maxlength="5" required>
                         <span class="label">Validade</span>
 
                         <input id="cvv-input" type="text" name="cvv" maxlength="3" required>
                         <span class="label">CVV</span>
                         
-                        <input id="bank-input" type="text" name="bank" maxlength="3" required>
+                        <input id="bank-input" type="text" name="bankcode" maxlength="3" required>
                         <span class="label">Código do Banco</span>
 
                         <div class="agreements">
-                          <div class="checkbox">
-                              <input type="checkbox" required>
-                              <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
-                          </div>
+                        <div class="checkbox">
+                            <input type="checkbox" required>
+                            <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                          <input type="submit" id="register-submitbtn">
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                  <input type="submit" id="register-submitbtn">
                 </div>
               </div>
             </div>

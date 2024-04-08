@@ -30,7 +30,7 @@
                     <div class=" mb-3 d-flex justify-content-center">
                         <form action="" method="post" enctype="multipart/form-data">
                             <input  type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
-                            <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto" src="../img/usuario.png" alt="" >
+                            <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto" src="<%= photo%>" alt="" >
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
@@ -38,11 +38,11 @@
                   </div>
 
                     <div class="content-title">
-                        <h1><%= name%></h1><span><%= cpf%></span>
+                        <h1><%= db_name%></h1><span><%= cpf%></span>
                     </div>
                     <div class="content-description">
-                        <p><%= formatted_birth%></p>
-                        <p><%= email%></p>
+                        <p><%= birth%></p>
+                        <p><%= email%></p >
                     </div>
                     <div class="buttons-views gap-3">
                         <a href="/userpageconvert" title="currentConvert">
