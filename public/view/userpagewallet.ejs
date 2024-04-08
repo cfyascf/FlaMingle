@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/wallet.css">
     <link rel="stylesheet" href="../css/formCard.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="../script/wallet.js" defer></script>
     <script src="../script/flImage.js" defer></script>
@@ -32,27 +31,27 @@
     <main class="cd-main d-block" style="height: 130vh;">
         <div class="profile-page d-flex justify-content-center align-items-center" style=" height: 130vh;">
             <div class="content">
-                <div>
+                <div class="resize-me">
                     <div class="content-cover position-relative">
                         <div class=" mb-3 d-flex justify-content-center">
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
                                 <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto"
-                                    src="../img/usuario.png" alt="">
+                                src="<%= photo%>" alt="">
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                     <div class="content-title">
-                        <h1>Mavizokas Pimentinha</h1><span>Curitiba, Brasilzao</span>
+                        <h1><%= db_name%></h1><span><%= cpf%></span>
                     </div>
                     <div class="content-description">
-                        <p>26/07/2006</p>
-                        <p>mavissss@gmail.com</p>
+                        <p><%= birth%></p>
+                        <p><%= email%></p >
                     </div>
                     <div class="buttons-views gap-3">
-                        <a href="../views/viewUserConvert.html" title="currentConvert">
+                        <a href="/userpageconvert" title="currentConvert">
                             <div class="" id="balloon">
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="350" height="35" viewBox="0 0 24 24"
@@ -62,7 +61,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <a href="../views/walletUser.html" title="Wallet">
+                        <a href="/userpagewallet" title="Wallet">
                             <div class="" id="balloon">
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
@@ -83,56 +82,10 @@
                         </a>
                     </div>
                     <section id="wallet" class="d-flex justify-content-center align-items-center flex-column">
-                        <div class="swiper mySwiper card-container">
-                            <div class="swiper-wrapper content">
-                                <div class="swiper-slide">
-                                    <div class="card-content">
-                                        <div class="image">
-                                            <img src="https://cashed.com.br/wp-content/uploads/2023/06/cartao-inter-mastercard-gold.png" alt="">
-                                        </div>
-                                        <div class="card-data">
-                                            <p>Number</p>
-                                            <p>Name</p>
-                                            <p>Expiration date</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-content">
-                                        <div class="image">
-                                            <img src="https://cashed.com.br/wp-content/uploads/2023/06/cartao-inter-mastercard-gold.png" alt="">
-                                        </div>
-                                        <div class="card-data">
-                                            <p>Number</p>
-                                            <p>Name</p>
-                                            <p>Expiration date</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
+                        
                     </section>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-            <script>
-                var swiper = new Swiper(".mySwiper", {
-                  slidesPerView: 1,
-                  spaceBetween: 30,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              </script>
             <div class="bg">
                 <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
@@ -146,51 +99,36 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-user" action="/registeruser" method="post">
-                        <input id="number-input" type="text" name="numbercard" maxlength="16" required>
+                    <form id="form-user" action="/userpagewallet" method="post">
+                        <input id="number-input" type="text" name="cardnumber" maxlength="16" required>
                         <span class="label">Número do Cartão</span>
         
                         <input id="username-input" type="text" name="name" required>
                         <span class="label">Nome Completo</span>
         
-                        <input id="userbirth-input" type="text" name="validity" maxlength="5" required>
+                        <input id="userbirth-input" type="text" name="expdate" maxlength="5" required>
                         <span class="label">Validade</span>
 
                         <input id="cvv-input" type="text" name="cvv" maxlength="3" required>
                         <span class="label">CVV</span>
                         
-                        <input id="bank-input" type="text" name="bank" maxlength="3" required>
+                        <input id="bank-input" type="text" name="bankcode" maxlength="3" required>
                         <span class="label">Código do Banco</span>
 
                         <div class="agreements">
-                          <div class="checkbox">
-                              <input type="checkbox" required>
-                              <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
-                          </div>
+                        <div class="checkbox">
+                            <input type="checkbox" required>
+                            <label for="">Eu li e concordo com os <a href="">termos de uso</a> do site.</label>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                          <input type="submit" id="register-submitbtn">
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                  <input type="submit" id="register-submitbtn">
                 </div>
               </div>
             </div>
           </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-          cssMode: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-          },
-          mousewheel: true,
-          keyboard: true,
-        });
-    </script>
 </body>
 </html>
