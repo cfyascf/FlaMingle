@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/wallet.css">
     <link rel="stylesheet" href="../css/formCard.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="../script/wallet.js" defer></script>
     <script src="../script/flImage.js" defer></script>
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
@@ -82,97 +83,37 @@
                         </a>
                     </div>
                     <section id="wallet" class="d-flex justify-content-center align-items-center flex-column">
-                        <div class="slider slider-container">
-                            <div class="card">
-                                <img name="cardImg" src="https://www.mobills.com.br/blog/wp-content/uploads/2022/01/Cartao-de-credito-AME-Mastercard.jpg" alt="">
-                                <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Número</h6>
-                                        <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Nome</h6>
-                                        <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Validade</h6>
-                                        <p style="font-weight: 400;">03/28</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://s3.amazonaws.com/marketplace.comparaonline.com/marketplace/logos/products/pan-basico.png" alt="">
-                                <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Número</h6>
-                                        <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Nome</h6>
-                                        <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Validade</h6>
-                                        <p style="font-weight: 400;">03/28</p>
+                        <h1>Carteira</h1>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <%for(i = 0; i < cards.length; i++) {%>
+                                <div class="swiper-slide">
+                                    <div class="card-container">
+                                        <img src="<%= cards[i].File_path%>" alt="">
+                                        <div class="carddata-container">
+                                            <div class="data">
+                                                <p class="label-cardsec">Number</p>
+                                                <p class="value"><%= cards[i].Number%></p>
+                                            </div>
+                                            <div class="data">
+                                                <p class="label-cardsec">Name</p>
+                                                <p class="value"><%= cards[i].Name%></p>
+                                            </div>
+                                            <div class="data">
+                                                <p class="label-cardsec">Exp Date</p>
+                                                <p class="value"><%= cards[i].VE%></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://banco.bradesco/html/classic/produtos-servicos/cartoes/assets/images/cards/bradesco-like-visa.png" alt="">
-                                <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Número</h6>
-                                        <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Nome</h6>
-                                        <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Validade</h6>
-                                        <p style="font-weight: 400;">03/28</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img name="cardImg" src="https://pontospravoar.com/wp-content/uploads/2022/09/click_carta%CC%83o-digital.png" alt="">
-                                <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Número</h6>
-                                        <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Nome</h6>
-                                        <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Validade</h6>
-                                        <p style="font-weight: 400;">03/28</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                <img name="cardImg" src="https://pontospravoar.com/wp-content/uploads/2022/09/click_carta%CC%83o-digital.png" alt="">
-                                <div class="card-content d-flex justify-content-center flex-column align-items-start">
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Número</h6>
-                                        <p style="font-weight: 400;">0000 0000 0000 0000</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Nome</h6>
-                                        <p style="font-weight: 400;">Maria Vitória Garcia Pimenta</p>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                                        <h6>Validade</h6>
-                                        <p style="font-weight: 400;">03/28</p>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
+                                <%}%>
                         </div>
-                        <button id="next"> ❯</button>
-                        <button id="prev">❮</button>
-                    </section>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
+            </section>
             </div>
             <div class="bg">
                 <div><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -218,5 +159,22 @@
             </div>
           </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
 </body>
 </html>

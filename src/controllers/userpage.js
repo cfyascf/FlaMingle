@@ -43,6 +43,14 @@ module.exports = {
             UserCPF: clean_cpf,
         });
 
-        return res.render('userpagewallet', { cpf, db_name, birth, email, photo });
+        const query = 'SELECT c.Number, c.Name, c.VE, b.File_path FROM Cards c INNER JOIN Banks b ON b.Code = c.BankCode WHERE c.UserCPF = :cpf';
+        const parameters = { cpf: clean_cpf }; 
+
+        const result = await db.query(query, {
+            replacements: parameters,
+            type: sequelize.QueryTypes.SELECT
+        });
+
+        return res.render('userpagewallet', { cpf, db_name, birth, email, photo, cards: result });
     }
 }
