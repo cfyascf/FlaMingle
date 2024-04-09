@@ -1,24 +1,36 @@
-// Iniciando Route do Express
-const express = require('express');
-const route = express.Router();
-
 // Iniciando Multer
 const multer = require("multer");
 
 // Recebendo arquivo do multer que criamos
-const config = require('../src/config/multer');
+const config = require('./src/config/multer');
 
-// Home user irá receber um arquivo com o "name" do HTML chamado de "foto"
-route.post('/homeUser', multer(config).single('photo'), cadastro.alunoInsert);
+// Iniciando Route do Express
+const express = require('express');
+const route = express.Router();
 
 // Importando os Controllers
-const register = require('./controllers/register');
-const home = require('./controllers/home');
+const home = require('./src/controllers/home');
+const register = require('./src/controllers/register');
+const login = require('./src/controllers/login');
+const userpage = require('./src/controllers/userpage');
+const edit = require('./src/controllers/edit');
 
 // Iniciando as rotas
 route.get('/', home.homeGet);
+route.post('/', home.homePost);
 
-route.get('/view login', register.userGet);
-route.post('/view login', register.userInsert);
+route.get('/login', login.loginGet);
+route.post('/login', login.loginPost);
+
+route.get('/registeruser', register.registerGet);
+route.post('/registeruser', register.registerPost);
+
+route.get('/userpage', userpage.userpageGet);
+route.post('/userpage', multer(config).single('photo'), edit.editUser);
+
+route.get('/userpageconvert', userpage.userpageconvertGet);
+
+route.get('/userpagewallet', userpage.userpagewalletGet);
+route.post('/userpagewallet', userpage.userwalletPost);
 
 module.exports = route;

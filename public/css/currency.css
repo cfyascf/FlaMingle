@@ -138,3 +138,12 @@ form button {
         flex-direction: column;
     }
 } 
+
+@media (min-width: 1024px) {
+    .drop-list #select-box {
+        width: 250px;
+    }
+    .drop-list #select-box-2 {
+        width: 250px;
+    }
+}
