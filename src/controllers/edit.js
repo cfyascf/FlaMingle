@@ -1,24 +1,24 @@
-const user = require('../model/modelUser')
+const db = require('../config/db');
+const sequelize = require('sequelize');
 
 module.exports = {
-    async photoAdd(req, res) {
-
-        if (req.file) {
+    async editUser(req, res){
+        const data = req.body;
         
-            const oldPhoto = await user.findAll({
-                raw: true,
-                attributes: ['Photo'],
-                where: { UserCPF: cpf }
+        const query = "UPDATE Users SET Name = :name, Email = :email, Phone = :phone, Password = :password WHERE UserCPF = :cpf";
+        const parameters = { name: data.name, email: data.email, phone: data.phone, password: data.password, cpf: cpf };
+    
+        try {
+            await db.query(query, {
+                replacements: parameters,
+                type: sequelize.QueryTypes.UPDATE 
             });
         
-            if (oldPhoto[0].Photo != 'usuario.png') fs.unlink(`public/img/${oldPhoto[0].Photo}`, ( err => { if(err) console.log(err); } ));
-        
-            await user.update(
-                {Photo: req.file.filename},
-                {where: { UserCPF: cpf }}
-            );
+            console.log("User updated");
+            res.render('userpage', { cpf, db_name, birth, email, photo });
+        } catch (error) {
+            res.render('userpage', { cpf, db_name, birth, email, photo });
         }
-
-        res.render('userpage', { cpf, name, birth, email });
     }
+    
 }
