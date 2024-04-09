@@ -13,7 +13,7 @@ const bank = database.define('Bank', {
         allowNull: false
     },
 
-    File: {
+    File_path: {
         type: sequelize.STRING(100)
     }
 });
