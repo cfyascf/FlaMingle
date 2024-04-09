@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="../css/formCard.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="../script/wallet.js" defer></script>
-    <script src="../script/flImage.js" defer></script>
+    <script src="/script/wallet.js" defer></script>
+    <script src="/script/filmage.js" defer></script>
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <title>Flamingle</title>
 </head>
@@ -37,14 +37,15 @@
                         <div class=" mb-3 d-flex justify-content-center">
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
-                                <img onclick="clickphoto()" name="photo" class="content-avatar" id="imgPhoto"
-                                src="<%= photo%>" alt="">
+                                <img  name="photo" class="content-avatar" id="imgPhoto"
+                                src="<%= photo %>" alt="">
                         </div>
                         </form>
                         <div class="content-bull"><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                     <div class="content-title">
+                    
                         <h1><%= db_name%></h1><span><%= cpf%></span>
                     </div>
                     <div class="content-description">
@@ -154,6 +155,22 @@
                           <input type="submit" id="register-submitbtn">
                         </div>
                     </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" tabindex="-1" id="modal-change-img">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Deseja mudar sua foto de perfil?</p>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-primary" name="send" value="Sim">
                 </div>
               </div>
             </div>

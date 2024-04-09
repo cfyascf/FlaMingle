@@ -1,5 +1,6 @@
 const db = require('../config/db');
 const sequelize = require('sequelize');
+const user = ('../model/modelUser');
 
 module.exports = {
     async editUser(req, res){
@@ -18,6 +19,13 @@ module.exports = {
             res.render('userpage', { cpf, db_name, birth, email, photo });
         } catch (error) {
             res.render('userpage', { cpf, db_name, birth, email, photo });
+        }
+
+        if (data.send == 'Sim') {
+            await user.update(
+                {Photo: req.file.filename},
+                {where: { UserCPF: cpf }}
+            );
         }
     }
     
