@@ -6,6 +6,7 @@ global.db_name = '';
 global.birth = '';
 global.email = '';
 global.photo = '';
+global.phone = '';
 
 module.exports = {
     async registerGet(req, res) {
@@ -19,6 +20,7 @@ module.exports = {
             db_name = data.name;
             email = data.email;
             cpf = data.cpf;
+            phone = data.phone;
             
             const formatted_birth = formatDate(data.birth);
 
@@ -30,7 +32,7 @@ module.exports = {
             if (result || age < 18) {
                 return res.render('registeruser', { cpf });
             } else {
-                photo = '../public/img/usuario.png';
+                photo = '../img/usuario.png';
 
                 await user.create({
                     UserCPF: clean_cpf,
