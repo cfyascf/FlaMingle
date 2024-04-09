@@ -12,6 +12,10 @@
     height: 100%;
 }
 
+.profile-page .bg div {
+    margin-bottom: 1000px;
+}
+
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -52,4 +56,71 @@
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     background-color: var(--light-pink);
+}
+
+@media (max-width: 768px) {
+    .profile-page .content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .resize-me {
+        width: 100%;
+    }
+
+    #wallet {
+        width: 100%;
+    }
+
+    #wallet img {
+        width: 60%;
+    }
+
+    .carddata-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 450px) {
+    .profile-page .content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .resize-me {
+        width: 100%;
+    }
+
+    #wallet {
+        margin-top: 20px;
+    }
+
+    #wallet img {
+        width: 100%;
+    }
+
+    .swiper-button-next::after, .swiper-button-prev::after {
+        display: none;
+    }
+
+    .carddata-container {
+        width: 100%;
+    }
+
+    .modal-dialog {
+        width: 100%; 
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal-content {
+        height: 100%;
+        border-radius: 0%;
+        border: none;
+    }
+    
+      .modal-backdrop {
+        background-color: #fff;
+      }
 }
