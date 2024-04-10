@@ -17,7 +17,7 @@ dark.addEventListener('click', () => {
     dark.style.display = 'none';
     light.style.display = 'block'
     light.style.fill = '#FFF'
-    bgImg.src = '../img/bgDarkMode'
+    bgImg.src = '../img/profilebddark.png'
 });
 
 light.addEventListener('click', () => {
