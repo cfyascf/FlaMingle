@@ -8,6 +8,11 @@ global.email = '';
 global.photo = '';
 global.phone = '';
 
+warning = [
+    {error: 'age', description: 'Idade mínima requerida não condizente!'},
+    {error: 'cpf', description: 'CPF Inválido!'}
+]
+
 module.exports = {
     async registerGet(req, res) {
         console.log(db_name, birth, email, phone);

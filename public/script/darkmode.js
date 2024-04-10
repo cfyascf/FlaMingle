@@ -4,20 +4,23 @@ let title = document.querySelector('.content-title');
 let desc = document.querySelector('.content-description');
 let light = document.getElementById('sun');
 let bgImg = document.getElementById('bg-light');
+let menuBtns = document.querySelectorAll('.buttons-views a');
+console.log(menuBtns);
 
 dark.style.fill = '#FFF'
 
 dark.addEventListener('click', () => {
-    document.body.style.background = '#203354';
+    document.body.style.background = '#294576';
     document.body.style.transition = 'background 1s ease'
-    content.style.background = '#23395d';
+    content.style.background = '#2A508F';
     content.style.transition = 'background 1s ease'
     title.style.color = '#FFF';
     desc.style.color = '#FFF';
     dark.style.display = 'none';
     light.style.display = 'block'
     light.style.fill = '#FFF'
-    bgImg.src = '../img/profilebddark.png'
+    bgImg.src = '../img/profilebgdark.png'
+    menuBtns.style.backgroundColor = '#FFF';
 });
 
 light.addEventListener('click', () => {
