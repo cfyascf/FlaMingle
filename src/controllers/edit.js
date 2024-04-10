@@ -1,9 +1,17 @@
 const db = require('../config/db');
 const sequelize = require('sequelize');
 
+global.db_name = '';
+global.email = '';
+global.phone = '';
+
 module.exports = {
     async editUser(req, res){
         const data = req.body;
+
+        db_name = data.name;
+        email = data.email;
+        
         const query = "UPDATE Users SET Name = :name, Email = :email, Phone = :phone, Password = :password WHERE UserCPF = :cpf";
         const parameters = { name: data.name, email: data.email, phone: data.phone, password: data.password, cpf: cpf };
     

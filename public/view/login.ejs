@@ -52,12 +52,12 @@
     </header>
     <main>
         <div class="left-side">
-            <h2>Preencha suas informações para se cadastrar no <span>FlaMingle.</span></h2>
+            <h2>Preencha suas informações para entrar na sua conta <span>FlaMingle.</span></h2>
             <img src="../img/login-img (1).png" alt="">
         </div>
         <div class="right-side">
             <form action="/login" method="post">
-                <input id="cpf-input" type="text" name="cpf" maxlength="14" required>
+                <input id="cpf-input" type="text" name="cpf" maxlength="14" value="<%= cpf%>" required>
                 <span class="label">CPF</span>
 
                 <input type="password" name="password" required>

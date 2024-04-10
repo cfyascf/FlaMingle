@@ -3,6 +3,8 @@ const sequelize = require('sequelize');
 const card = require('../model/modelCard');
 const user = require('../model/modelUser');
 
+global.message = '';
+
 module.exports = {
     async userpageGet(req, res) {
         res.render('userpage', { cpf, db_name, birth, email, photo });
@@ -22,9 +24,13 @@ module.exports = {
             type: sequelize.QueryTypes.SELECT
         });
 
+        if(result.length == 0) {
+            message = 'Você ainda não possui cartões cadastrados!';
+        }
+
         console.log(result);
 
-        res.render('userpagewallet', { cpf, db_name, birth, email, photo, cards: result });
+        res.render('userpagewallet', { cpf, db_name, birth, email, photo, cards: result, message });
     },
 
     async userwalletPost(req, res) {
@@ -32,13 +38,12 @@ module.exports = {
         console.log(data);
         const clean_cpf = cpf.replace(/[.-]/g, '');
         const clean_expdate = data.expdate.replace(/\//g, '');
-        const formatted_validity = `${clean_expdate.substr(4, 4)}-${clean_expdate.substr(2, 2)}`;
 
         await card.create ({
             Number: data.cardnumber,
             Name: data.name,
             CVV: data.cvv,
-            VE: formatted_validity,
+            VE: clean_expdate,
             BankCode: data.bankcode,
             UserCPF: clean_cpf,
         });
@@ -51,6 +56,8 @@ module.exports = {
             type: sequelize.QueryTypes.SELECT
         });
 
-        return res.render('userpagewallet', { cpf, db_name, birth, email, photo, cards: result });
+        message = '';
+
+        return res.render('userpagewallet', { cpf, db_name, birth, email, photo, cards: result, message });
     }
 }

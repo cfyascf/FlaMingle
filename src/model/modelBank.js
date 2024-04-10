@@ -14,7 +14,7 @@ const bank = database.define('Bank', {
     },
 
     File_path: {
-        type: sequelize.STRING(100)
+        type: sequelize.STRING(250)
     }
 });
 

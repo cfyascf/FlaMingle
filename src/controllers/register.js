@@ -29,7 +29,7 @@ module.exports = {
             const clean_cpf = data.cpf.replace(/[.-]/g, '');
             const result = await user.findOne({ where: { UserCPF: clean_cpf } });
 
-            if (result || age < 18) {
+            if (result || age < 18 || data.birth.length < 10 || data.phone.length < 14) {
                 return res.render('registeruser', { cpf });
             } else {
                 photo = '../img/usuario.png';

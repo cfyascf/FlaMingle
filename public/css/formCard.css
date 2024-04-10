@@ -7,13 +7,13 @@ form {
 }
 
 .modal-body {
-    padding: 20px;
+    padding: 20px 50px;
 }
 
 .modal-content {
     border-radius: 18px ;
 }
-input {
+.modal-body input {
     border-bottom: 1px solid #ccc;
     line-height: 35px;
     padding:5px 15px;
@@ -21,14 +21,14 @@ input {
     outline: none;
 }
 
-.label {
+.modal-body .label {
     position: relative;
     top: -33px;
     transition: 0.5s;
     opacity: 0.5;
 }
 
-input:focus + .label, input:valid + .label {
+.modal-body input:focus + .label, input:valid + .label {
     transform: translateY(-40px);
     outline: none;
     font-size: 13px;
@@ -65,4 +65,15 @@ input:focus + .label, input:valid + .label {
 
 #register-submitbtn:hover {
     background-color: var(--light-pink);
+}
+
+#delete-btn {
+    background-color: white;
+    font-size: 0.9rem;
+    color: rgb(255, 0, 98);
+    margin: 0;
+}
+
+#delete-btn:hover {
+    text-decoration: underline;
 }

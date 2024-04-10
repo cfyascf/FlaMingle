@@ -69,7 +69,7 @@ body {
 }
 
 .profile-page .content-title span {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .profile-page .content-description {
@@ -98,6 +98,10 @@ body {
     z-index: 1;
 }
 
+.profile-page .bg {
+    background-image: "../img/profilebg.png";
+}
+
 .profile-page .bg div {
     content: "";
     width: 100%;
@@ -107,7 +111,6 @@ body {
     left: 0;
     z-index: 1;
     overflow: hidden;
-    background: var(--strong-pink);
 }
 
 .buttons-views {
@@ -133,7 +136,7 @@ body {
 }
 
 .buttons-views a:hover {
-    background-color: var(--strong-pink);
+    background-color: var(--light-pink);
 }
 
 .buttons-views #balloon {
@@ -145,6 +148,19 @@ body {
     border-radius: 30px;
     transition: top .4s ease-in-out, opacity .4s ease-in-out;
     filter:  drop-shadow(0 5px 10px rgba(0, 0, 0, .2));
+}
+
+.accountname-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 50px;
+}
+
+#configbtn svg {
+    width: 35px;
+    height: 35px;
 }
 
 @media (min-width: 1024px) {

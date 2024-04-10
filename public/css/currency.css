@@ -5,14 +5,14 @@
     background-color: white; 
 }
 
-form :where(input, select, button) {
+#wrapper form :where(input, select, button) {
     width: 100%;
     outline: none;
     border: none;
     border-radius: 109px;
 }
 
-form input {
+#wrapper form input {
     border: 1px solid #999;
     height: 50px;
     padding: 0 15px;
@@ -95,12 +95,17 @@ form .exchange-rate {
 
 form button {
     height: 52px;
-    color: #fff;
-    background-color: #E04171;
+    color: black;
+    background-color: var(--light-pink);
     cursor: pointer;
     font-size: 17px;
     border-radius: 190px;
     font-weight: 500;
+    transition: 0.5s;
+}
+
+form button:hover {
+    background-color: var(--light-grey);
 }
 
 #select-box select::-webkit-scrollbar {

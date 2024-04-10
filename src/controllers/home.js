@@ -1,3 +1,5 @@
+const user = require('../model/modelUser');
+
 const warning = {message: "CPF inválido!", code: 202};
 global.cpf = '';
 
@@ -33,6 +35,11 @@ module.exports = {
 
             if (remainder !== parseInt(clean_cpf.substring(10, 11))){
                 return res.render('index', { warning }); 
+            }
+
+            const result = await user.findOne({ where: { UserCPF: clean_cpf } });
+            if (result) {
+                return res.render('login', { cpf }); 
             }
 
             res.render('registeruser', { cpf });
