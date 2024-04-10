@@ -26,13 +26,13 @@ route.get('/registeruser', register.registerGet);
 route.post('/registeruser', register.registerPost);
 
 
-route.post('/userpage', multer(config).single('photo'), edit.editUser, edit.deleteUser);
+route.post('/userpagealter', edit.editUser);
+route.post('/userpagedelete', edit.deleteUser);
 route.get('/userpage', userpage.userpageGet);
 
 route.get('/userpageconvert', userpage.userpageconvertGet);
-route.post('/userpageconvert', edit.editUser, edit.deleteUser);
 
 route.get('/userpagewallet', userpage.userpagewalletGet);
-route.post('/userpagewallet', userpage.userwalletPost, edit.editUser, edit.deleteUser);
+route.post('/userpagewallet', userpage.userwalletPost);
 
 module.exports = route;

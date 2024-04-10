@@ -92,7 +92,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="form-user" action="/userpage" method="post">
+                        <form id="form-user" action="/userpagealter" method="post">
                             <input id="number-input" type="text" name="name" maxlength="16" required >
                             <span class="label">Nome Completo</span>
             
@@ -113,8 +113,8 @@
                             </div>
                             <input type="submit" id="register-submitbtn" name="update" value="Atualizar">
                         </form>
-                        <form action="/userpage" method="post">
-                            <input type="submit" id="delete-btn" onclick="deleteUser()" name="delete" value="Excluir Conta">
+                        <form action="/userpagedelete" method="post">
+                            <input type="submit" id="delete-btn" name="delete" value="Excluir Conta">
                         </form>
                     </div>
                   </div>

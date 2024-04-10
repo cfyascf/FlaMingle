@@ -37,11 +37,11 @@ const card = database.define('Card', {
     }
 });
 
-card.belongsTo(user, { foreignKey: 'UserCPF' });
-user.hasMany(card, { foreignKey: 'UserCPF' });
+card.belongsTo(user, { foreignKey: 'UserCPF', onDelete: 'CASCADE' });
+user.hasMany(card, { foreignKey: 'UserCPF', onDelete: 'CASCADE' });
 
-card.belongsTo(bank, { foreignKey: 'BankCode' });
-bank.hasMany(card, { foreignKey: 'BankCode' });
+card.belongsTo(bank, { foreignKey: 'BankCode', onDelete: 'CASCADE' });
+bank.hasMany(card, { foreignKey: 'BankCode', onDelete: 'CASCADE' });
 
 database.sync()
     .then(() => {
