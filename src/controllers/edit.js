@@ -11,9 +11,10 @@ module.exports = {
 
         db_name = data.name;
         email = data.email;
+        phone = data.phone.replace(/\s/g, '');
         
         const query = "UPDATE Users SET Name = :name, Email = :email, Phone = :phone, Password = :password WHERE UserCPF = :cpf";
-        const parameters = { name: data.name, email: data.email, phone: data.phone, password: data.password, cpf: cpf };
+        const parameters = { name: data.name, email: data.email, phone: phone, password: data.password, cpf: cpf };
     
         try {
             await db.query(query, {

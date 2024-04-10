@@ -38,9 +38,10 @@ module.exports = {
         console.log(data);
         const clean_cpf = cpf.replace(/[.-]/g, '');
         const clean_expdate = data.expdate.replace(/\//g, '');
+        const clean_cardnumber = data.cardnumber.replace(/\s/g, '');
 
         await card.create ({
-            Number: data.cardnumber,
+            Number: clean_cardnumber,
             Name: data.name,
             CVV: data.cvv,
             VE: clean_expdate,

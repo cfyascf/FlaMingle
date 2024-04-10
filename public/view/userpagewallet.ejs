@@ -23,7 +23,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="../script/wallet.js" defer></script>
-    <script src="../script/flImage.js" defer></script>
+    <script src="../script/autofillcard.js" defer></script>
     <script src="../script/darkmode.js" defer></script>
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <title>Flamingle</title>
@@ -101,7 +101,7 @@
                                         <div class="carddata-container">
                                             <div class="data">
                                                 <p class="label-cardsec">Number</p>
-                                                <p class="value"><%= cards[i].Number%></p>
+                                                <p id="cardnumber-display" class="value"><%= cards[i].Number%></p>
                                             </div>
                                             <div class="data">
                                                 <p class="label-cardsec">Name</p>
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="data">
                                                 <p class="label-cardsec">Exp Date</p>
-                                                <p class="value"><%= cards[i].VE%></p>
+                                                <p id="expdate-display" class="value"><%= cards[i].VE%></p>
                                             </div>
                                         </div>
                                     </div>
@@ -145,13 +145,13 @@
                 </div>
                 <div class="modal-body">
                     <form id="form-user" action="/userpagewallet" method="post">
-                        <input id="number-input" type="text" name="cardnumber" maxlength="16" required>
+                        <input id="cardnumber-input" type="text" name="cardnumber" maxlength="19" required>
                         <span class="label">Número do Cartão</span>
         
                         <input id="username-input" type="text" name="name" required>
                         <span class="label">Nome Completo</span>
         
-                        <input id="userbirth-input" type="text" name="expdate" maxlength="5" required>
+                        <input id="expdate-input" type="text" name="expdate" maxlength="5" required>
                         <span class="label">Validade</span>
 
                         <input id="cvv-input" type="text" name="cvv" maxlength="3" required>
@@ -182,14 +182,14 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-user" action="/userpagewallet" method="post">
+                    <form id="form-user" action="/userpagealter" method="post">
                         <input id="number-input" type="text" name="name" maxlength="16" required >
                         <span class="label">Nome Completo</span>
         
                         <input id="useremail-input" type="email" name="email" required >
                         <span class="label">Email</span>
 
-                        <input id="userphone-input" type="text" name="phone" required >
+                        <input id="userphone-input" type="text" name="phone" maxlength="14" required >
                         <span class="label">Telefone</span>
 
                         <input id="userpassword-input" type="password" name="password" required >
@@ -203,7 +203,7 @@
                         </div>
                         <input type="submit" id="register-submitbtn" name="update" value="Atualizar">
                     </form>
-                    <form action="/userpagewallet" method="post">
+                    <form action="/userpagedelete" method="post">
                         <input type="submit" id="delete-btn" name="delete" value="Excluir Conta">
                     </form>
                 </div>

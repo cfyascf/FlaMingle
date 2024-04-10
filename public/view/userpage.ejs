@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/darkmode.css">
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <script defer src="../script/filmage.js"></script>
-    <script defer src="../script/autofill.js"></script>
+    <script defer src="../script/autofilluser.js"></script>
     <script defer src="../script/darkmode.js"></script>
     <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
     <title>Flamingle</title>
@@ -103,14 +103,14 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="form-user" action="/userpage" method="post">
-                            <input id="number-input" type="text" name="name" maxlength="16" required >
+                        <form id="form-user" action="/userpagealter" method="post">
+                            <input id="username-input" type="text" name="name" required >
                             <span class="label">Nome Completo</span>
             
                             <input id="useremail-input" type="email" name="email" required >
                             <span class="label">Email</span>
 
-                            <input id="userphone-input" type="text" name="phone" required >
+                            <input id="userphone-input" type="text" name="phone" maxlength="14" required >
                             <span class="label">Telefone</span>
 
                             <input id="userpassword-input" type="password" name="password" required >
@@ -124,8 +124,8 @@
                             </div>
                             <input type="submit" id="register-submitbtn" name="update" value="Atualizar">
                         </form>
-                        <form action="/userpage" method="post">
-                            <input type="submit" id="delete-btn" onclick="deleteUser()" name="delete" value="Excluir Conta">
+                        <form action="/userpagedelete" method="post">
+                            <input type="submit" id="delete-btn" name="delete" value="Excluir Conta">
                         </form>
                     </div>
                   </div>
