@@ -55,6 +55,7 @@
             <img src="../img/register-user (1).png" alt="">
         </div>
         <div class="right-side">
+          <p style="color: rgb(255, 0, 98); font-size: 0.9rem;"><%= warning.description%></p>
             <form id="form-user" action="/registeruser" method="post">
                 <input id="cpf-input" type="text" name="cpf" maxlength="14" value="<%= cpf%>" required>
                 <span class="label">CPF</span>

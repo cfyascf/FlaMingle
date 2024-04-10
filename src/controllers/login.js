@@ -7,12 +7,15 @@ global.birth = '';
 global.email = '';
 global.photo = '';
 
+warning = '';
+
 module.exports = {
     async loginGet(req, res) {
-        res.render('login');
+        res.render('login', { cpf, warning: warning });
     },
 
     async loginPost(req, res) {
+        warning = 'CPF não registrado!';
         try {
             const data = req.body;
             cpf = data.cpf;
@@ -50,7 +53,7 @@ module.exports = {
 
                 return res.render('userpage', { cpf, db_name, birth, email, photo });
             } else {
-                res.redirect('/login');
+                return res.render('login', { warning: warning });
             }
         } catch (error) {
             console.error('Erro:', error);
