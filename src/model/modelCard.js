@@ -6,7 +6,7 @@ const bank = require('./modelBank');
 
 const card = database.define('Card', {
     Number: {
-        type: sequelize.NUMERIC(15),
+        type: sequelize.STRING(19),
         primaryKey: true,
         allowNull: false
     },

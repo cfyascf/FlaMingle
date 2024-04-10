@@ -23,7 +23,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="../script/wallet.js" defer></script>
-    <script src="../script/flImage.js" defer></script>
+    <script src="../script/autofillcard.js" defer></script>
     <link rel="shortcut icon" href="../img/logo-transparente.png" type="image/x-icon">
     <title>Flamingle</title>
 </head>
@@ -100,7 +100,7 @@
                                         <div class="carddata-container">
                                             <div class="data">
                                                 <p class="label-cardsec">Number</p>
-                                                <p class="value"><%= cards[i].Number%></p>
+                                                <p id="cardnumber-display" class="value"><%= cards[i].Number%></p>
                                             </div>
                                             <div class="data">
                                                 <p class="label-cardsec">Name</p>
@@ -108,7 +108,7 @@
                                             </div>
                                             <div class="data">
                                                 <p class="label-cardsec">Exp Date</p>
-                                                <p class="value"><%= cards[i].VE%></p>
+                                                <p id="expdate-display" class="value"><%= cards[i].VE%></p>
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                 <div><img src="../img/profilebg.png" style="width: 100%;">
                 </div>
                 <div class="d-flex justify-content-end align-items-start p-4" style="width: 100%; z-index: 999; cursor: pointer;">
-                    <a href="">
+                    <a href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg>
                     </a>
                 </div>
@@ -141,13 +141,13 @@
                 </div>
                 <div class="modal-body">
                     <form id="form-user" action="/userpagewallet" method="post">
-                        <input id="number-input" type="text" name="cardnumber" maxlength="16" required>
+                        <input id="cardnumber-input" type="text" name="cardnumber" maxlength="19" required>
                         <span class="label">Número do Cartão</span>
         
                         <input id="username-input" type="text" name="name" required>
                         <span class="label">Nome Completo</span>
         
-                        <input id="userbirth-input" type="text" name="expdate" maxlength="5" required>
+                        <input id="expdate-input" type="text" name="expdate" maxlength="5" required>
                         <span class="label">Validade</span>
 
                         <input id="cvv-input" type="text" name="cvv" maxlength="3" required>
@@ -185,7 +185,7 @@
                         <input id="useremail-input" type="email" name="email" required >
                         <span class="label">Email</span>
 
-                        <input id="userphone-input" type="text" name="phone" required >
+                        <input id="userphone-input" type="text" name="phone" maxlength="14" required >
                         <span class="label">Telefone</span>
 
                         <input id="userpassword-input" type="password" name="password" required >
