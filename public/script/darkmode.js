@@ -4,9 +4,10 @@ let title = document.querySelector('.content-title');
 let desc = document.querySelector('.content-description');
 let light = document.getElementById('sun');
 let bgImg = document.getElementById('bg-light');
-let menuBtns = document.querySelectorAll('.buttons-views a');
-console.log(menuBtns);
-
+let titleWallet = document.querySelector('.title-wallet')
+let cardContainer = document.querySelectorAll('.carddata-container')
+let iconTransfer = document.getElementById('iconTransfer')
+let sla = document.querySelector('.from')
 dark.style.fill = '#FFF'
 
 dark.addEventListener('click', () => {
@@ -20,7 +21,12 @@ dark.addEventListener('click', () => {
     light.style.display = 'block'
     light.style.fill = '#FFF'
     bgImg.src = '../img/profilebgdark.png'
-    menuBtns.style.backgroundColor = '#FFF';
+    titleWallet.style.color = '#FFF'
+    cardContainer.style.color = '#FFF'
+    cardContainer.style.borderTop = '1px solid #FFF'
+    cardContainer.style.borderBottom = '1px solid #FFF'
+    iconTransfer.style.fill = '#FFF'
+    sla.style.color = '#FFF'
 });
 
 light.addEventListener('click', () => {
@@ -34,4 +40,6 @@ light.addEventListener('click', () => {
     light.style.display = 'none'
     dark.style.fill = '#FFF'
     bgImg.src = '../img/profilebg.png'
+    titleWallet.style.color = '#262626'
+    iconTransfer.style.fill = 'black'
 });

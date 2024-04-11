@@ -2,7 +2,7 @@
     width: 370px; 
     padding: 30px; 
     border-radius: 8px; 
-    background-color: white; 
+    background-color: transparent; 
 }
 
 #wrapper form :where(input, select, button) {
@@ -17,6 +17,7 @@
     height: 50px;
     padding: 0 15px;
     font-size: 17px;
+    background-color: transparent;
 }
 
 form p {
@@ -44,6 +45,7 @@ form .drop-list {
     align-items: center;
     justify-content: center;
     border: 1px solid #999;
+    background-color: transparent;
 }
 
 #select-box select {
@@ -65,6 +67,7 @@ form .drop-list {
     border-radius: 109px;
     justify-content: center;
     border: 1px solid #999;
+    background-color: transparent;
 }
 
 #select-box-2 select {
