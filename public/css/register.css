@@ -79,7 +79,11 @@ input:focus + .label, input:valid + .label {
 }
 
 .checkbox {
+    display: flex;
+    align-items: start;
     height: fit-content;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .checkbox label a {
@@ -88,6 +92,7 @@ input:focus + .label, input:valid + .label {
 
 .checkbox input {
     margin: 0;
+    margin-top: 6px;
 }
 
 .agreements {
@@ -119,5 +124,28 @@ input:focus + .label, input:valid + .label {
     .right-side {
         width: 100%;
         padding: 50px;
+        height: 130vh;
+    }
+
+    form {
+        margin-top: 100px;
+    }
+
+    .checkbox input {
+        margin: 0;
+        margin-top: 6px;
+    }
+} 
+
+@media (min-width: 1024px) {
+    main {
+        height: 120vh;
+    }
+
+}
+
+@media (min-width: 1440px) {
+    main {
+        height: 100vh;
     }
 }
