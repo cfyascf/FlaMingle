@@ -23,7 +23,7 @@ body {
     padding: 2rem;
     background: #fff;
     border-radius: 2rem;
-   
+    height: fit-content;
 }
 
 .profile-page .content-cover {
@@ -196,7 +196,7 @@ body {
         background-color: #fff;
       }
 
-    .profile-page .content{
+    .profile-page .content {
         height: 100vh;
     }
 
