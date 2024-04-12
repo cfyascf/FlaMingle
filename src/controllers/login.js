@@ -1,36 +1,60 @@
 const db = require('../config/db');
 const sequelize = require('sequelize');
 
+global.cpf = '';
+global.db_name = '';
+global.birth = '';
+global.email = '';
+global.photo = '';
+
 module.exports = {
     async loginGet(req, res) {
         res.render('login');
     },
 
     async loginPost(req, res) {
-        const data = req.body;
+        try {
+            const data = req.body;
+            cpf = data.cpf;
+            
+            clean_cpf = data.cpf.replace(/[.-]/g, '');
 
-        const clean_cpf = data.cpf.replace(/[.-]/g, '');
+            const query = 'SELECT * FROM Users WHERE UserCPF = :cpf AND Password = :password';
+            const parameters = { cpf: clean_cpf, password: data.password }; 
 
-        const query = 'SELECT * FROM Users WHERE UserCPF = :cpf AND Password = :password';
-        const parameters = { cpf: clean_cpf, password: data.password }; 
+            const result = await db.query(query, {
+                replacements: parameters,
+                type: sequelize.QueryTypes.SELECT
+            })
 
-        const result = await db.query(query, {
-            replacements: parameters,
-            type: sequelize.QueryTypes.SELECT
-        })
+            console.log(result);
 
-        const cpf = result.UserCPF;
-        const name = result.Name;
-        const formatted_birth = result.Birth;
-        const email = result.Email;
-        const photo = result.Photo;
+            if (result.length > 0) {
+                db_name = result[0].Name;
 
-        if(result.length > 0) {
-            res.render('userpage',  { cpf, name, formatted_birth, email, photo });
-        }
+                const bbirth = result[0].Birth;
+                var birthDate = new Date(bbirth);
+                var day = birthDate.getDate();
+                var month = birthDate.getMonth() + 1;
+                var year = birthDate.getFullYear();
+                if (day < 10) {
+                    day = "0" + day;
+                }
+                if (month < 10) {
+                    month = "0" + month;
+                }
+                birth = day + "/" + month + "/" + year;
 
-        else {
-            res.redirect('/login');
+                email = result[0].Email;
+                photo = result[0].Photo;
+
+                return res.render('userpage', { cpf, db_name, birth, email, photo });
+            } else {
+                res.redirect('/login');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            res.status(500).send('Erro interno');
         }
     }
 }

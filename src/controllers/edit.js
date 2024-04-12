@@ -1,24 +1,43 @@
-const user = require('../model/modelUser')
+const db = require('../config/db');
+const sequelize = require('sequelize');
 
 module.exports = {
-    async photoAdd(req, res) {
-
-        if (req.file) {
-        
-            const oldPhoto = await user.findAll({
-                raw: true,
-                attributes: ['Photo'],
-                where: { CPF: cpf }
+    async editUser(req, res){
+        const data = req.body;
+        const query = "UPDATE Users SET Name = :name, Email = :email, Phone = :phone, Password = :password WHERE UserCPF = :cpf";
+        const parameters = { name: data.name, email: data.email, phone: data.phone, password: data.password, cpf: cpf };
+    
+        try {
+            await db.query(query, {
+                replacements: parameters,
+                type: sequelize.QueryTypes.UPDATE 
             });
         
-            if (oldPhoto[0].Photo != 'usuario.png') fs.unlink(`public/img/${oldPhoto[0].Photo}`, ( err => { if(err) console.log(err); } ));
-        
-            await user.update(
-                {Photo: req.file.filename},
-                {where: { CPF: cpf }}
-            );
+            console.log("User updated");
+            res.render('userpage', { cpf, db_name, birth, email, photo });
+        } catch (error) {
+            res.render('userpage', { cpf, db_name, birth, email, photo });
         }
+    },
 
-        res.render('userpage', { cpf, name, birth, email });
+    async deleteUser(req, res) {
+        const clean_cpf = cpf.replace(/[.-]/g, '');
+        console.log(cpf);
+        console.log(clean_cpf);
+        const query = "DELETE FROM Users WHERE UserCPF = :cpf";
+        const parameters = { cpf: clean_cpf };
+    
+        try {
+            await db.query(query, {
+                replacements: parameters,
+                type: sequelize.QueryTypes.DELETE
+            });
+        
+            console.log("User deleted");
+            res.redirect('/');
+        } catch (error) {
+            console.log("User NOT deleted");
+            res.render('userpage', { cpf, db_name, birth, email, photo });
+        }
     }
 }

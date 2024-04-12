@@ -25,12 +25,14 @@ route.post('/login', login.loginPost);
 route.get('/registeruser', register.registerGet);
 route.post('/registeruser', register.registerPost);
 
+
+route.post('/userpage', multer(config).single('photo'), edit.editUser, edit.deleteUser);
 route.get('/userpage', userpage.userpageGet);
-route.post('/userpage', multer(config).single('photo'), edit.photoAdd);
 
 route.get('/userpageconvert', userpage.userpageconvertGet);
+route.post('/userpageconvert', edit.editUser, edit.deleteUser);
 
 route.get('/userpagewallet', userpage.userpagewalletGet);
-route.post('/userpagewallet', userpage.userwalletPost);
+route.post('/userpagewallet', userpage.userwalletPost, edit.editUser, edit.deleteUser);
 
 module.exports = route;
